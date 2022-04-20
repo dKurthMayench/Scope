@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resgistrarse</title>
+    <script type="text/javascript" src="HTTP://code.jquery.com/jquery-latest.js"></script>
+    <script src="resources/index.js"></script>
+    <script src="resources/styles.js"></script>
+    <link rel="stylesheet" href="resources/styles.css">
+</head>
+
+<body>
+    <div id="registro">
+        <div class="body">
+            <form id="formRegistro" method="post" action="finalizarRegistro.php">
+                <div class="header">Crear Cuenta</div>
+                <div class="fila">
+                    <div id="iUsuario" class="item itemUsuario">
+                        <fieldset id="fieldsetUser" class="instruccion">
+                            <legend>Introduce tu usuario</legend>
+                            <input type="text" class="input usuario" id="user" name="user" placeholder="Usuario">
+                        </fieldset>
+                        <div class="error" id="errorUsuarioVacio">
+                            Este campo es obligatorio.
+                        </div>
+                        <div class="error" id="errorUsuarioExiste">
+                            El usuario ya existe. <a href="../login/" style="color: #7289DA">¿Iniciar Sesión?</a>
+                        </div>
+                        <div class="error" id="errorUsuarioLargo">
+                            Introduce máximo 16 caracteres.
+                        </div>
+                        <div class="error" id="errorUsuarioSimbolos">
+                            Sólo se pueden utilizar letras, números, "-", "_" o "."
+                        </div>
+                    </div>
+                    <div id="iEmail" class="item itemEmail">
+                        <fieldset id="fieldsetEmail" class="instruccion">
+                            <legend>Introduce tu correo electrónico</legend>
+                            <input type="text" class="input email" id="email" name="email" placeholder="Correo electrónico">
+                        </fieldset>
+                        <div class="error" id="errorEmailVacio">
+                            Este campo es obligatorio.
+                        </div>
+                        <div class="error" id="errorEmailFalso">
+                            Introduce un correo electrónico válido.
+                        </div>
+                        <div class="error" id="errorEmailDuplicado">
+                            Este correo ya está asociado a una cuenta.
+                        </div>
+                    </div>
+                </div>
+                <div class="item itemPwd">
+                    <fieldset id="fieldsetPwd" class="instruccion">
+                        <legend>Introduce tu contraseña</legend>
+                        <input type="password" class="input pwd" id="pwd" name="pwd" placeholder="Contraseña">
+                    </fieldset>
+                    <div class="error" id="errorPwdVacio">
+                        Este campo es obligatorio
+                    </div>
+                    <div class="error" id="errorPwdIlegal">
+                        La contraseña no debe contener "#"
+                    </div>
+                    <div class="error" id="errorPwdSeguro">
+                        La contraseña debe tener al menos 8 caracteres, máximo 32, y al menos 1 minúscula, 1 mayúscula y 1 número
+                    </div>
+                </div>
+                <div class="item itemPwdConfirm">
+                    <fieldset id="fieldsetPwdConfirm" class="instruccion">
+                        <legend>Confirma la contraseña</legend>
+                        <input type="password" class="input pwdConfirm" id="pwdConfirm" name="pwdConfirm"
+                            placeholder="Confirmar contraseña">
+                    </fieldset>
+                    <div class="error" id="errorPwdConfirmVacio">
+                        Este campo es obligatorio
+                    </div>
+                    <div class="error" id="errorPwdConfirmDiferentes">
+                        Las contraseñas no coinciden
+                    </div>
+                </div>
+                <div class="item itemCheckbox">
+                    <input type="checkbox" name="acuerdo" id="politica">
+                    <label id='labelAcuerdo' for="acuerdo"> He leído y acepto la <a href="../politicaPrivacidad/">política de privacidad</a></label>
+                    <div class="error" id="errorPolitica">
+                        Tienes que aceptar la política de privacidad para poder seguir con la creación decuenta.
+                    </div>
+                </div>
+                <button id="validar" type="button" class="btn validarFormulario">Crear cuenta</button>
+                <span class="consejoIniciarSesion">
+                    ¿Ya tienes una cuenta? <a href="../login/" style="color: #7289DA">Inicia sesión</a>.
+                </span>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

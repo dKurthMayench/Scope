@@ -1,0 +1,303 @@
+html, body{
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #23272A;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.btn{
+    padding: 5%;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: #7289DA;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #889ada;
+}
+.instruccion > legend{
+    font-size: small;
+}
+fieldset{
+    cursor: text;
+    text-align: start;
+    border-radius: 10px;
+}
+#datos > div:not(:last-child){
+    margin-bottom: 4%;
+}
+fieldset > legend{
+    font-size: small;
+}
+.input{
+    border: none;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+}
+.input:focus{
+    outline: none;
+}
+#header{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2C2F33;
+    padding: .3em;
+}
+.inicio{
+    font-weight: 700;
+    text-align: center;
+    width: 10%;
+    min-width: 120px;
+}
+.busquedaCat{
+    width: 20%;
+}
+.busquedaArt{
+    width: 40%;
+}
+.perfil{
+    cursor: pointer;
+    border: 1px solid white;
+    align-items: center;
+    border-radius: .5em;
+    display: flex;
+    flex-direction: row;
+    width: 120px;
+    height: 55px;
+    padding: 5px;
+}
+.perfil:hover{
+    background-color: #23272A;
+}
+.perfil img{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+}
+#alias{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px;
+    margin-left: 0px;
+    padding-left: 5px;
+    border-left: 1px solid white;
+}
+.rep{
+    text-align: center;
+    width: 100%;
+    color: #99AAB5;
+    font-size: xx-small;
+}
+.btnInicio{
+    padding: 15px;
+    color: white;
+    font-weight: 600;
+    font-size: x-large;
+}
+#informacion{
+    border: 1px solid #7289DA;
+    border-radius: .5em;
+    padding: 3%;
+    margin: auto;
+    margin-top: 1%;
+    background-color: #2C2F33;
+    width: 50%;
+}
+#foto img{
+    position: relative;
+    border-radius: 50%;
+    width: 25vw;
+    height: 25vw;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    cursor: pointer;
+}
+#foto{
+    text-align: center;
+}
+#foto:hover img{
+    opacity: 0.6;
+}
+#formImg{
+    width: 100%;
+}
+fieldset input{
+    color: white;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 4vh;
+    border-bottom: 2px solid #7289DA;
+}
+.nav div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    width: calc(100% / 3);
+}
+.nav div:not(:first-child){
+    border-left: 1px solid #889ada;
+}
+.nav div:hover{
+    cursor: pointer;
+    background-color: #7289DA;
+}
+.nav div.selected{
+    background-color: #7289DA;
+}
+.error{
+    display: none;
+    color: rgb(247, 94, 94) !important;
+    font-size: small;
+    text-align: start;
+}
+
+#submitDatos{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    padding: .5em;
+    width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    background-color: #23272A;
+    border-radius: .5em;
+}
+#submitDatos .btn{
+    border-radius: 5px;
+    padding: .25em;
+    width: auto;
+}
+#submitDatos .btn:first-child{
+    background-color: #da7272;
+    border: 1px solid white;
+}
+#submitDatos .btn{
+    background-color: #72da77;
+    border: 1px solid #72da77;
+}
+textarea{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    resize: none;
+}
+.disabled{
+    color: rgb(136, 136, 136);
+    border: 1px solid rgb(136, 136, 136);
+}
+.disabled input{
+    color: rgb(136, 136, 136);
+}
+.datosAlias{
+    width: 30%;
+}
+.datosRep{
+    width: 20%;
+}
+.datosNombre{
+    width: 30%;
+}
+.datosApellidos{
+    width: 70%;
+}
+.datosEmail{
+    width: 50%;
+}
+.fila{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+#submitPwd{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    padding: .5em;
+    width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    background-color: #23272A;
+    border-radius: .5em;
+}
+#submitPwd .btn{
+    border-radius: 5px;
+    padding: .25em;
+    width: auto;
+}
+#submitPwd .btn:first-child{
+    background-color: #da7272;
+    border: 1px solid white;
+}
+#submitPwd .btn{
+    background-color: #72da77;
+    border: 1px solid #72da77;
+}
+.cerrarSesion{
+    text-align: center;
+}
+.btnCerrarSesion{
+    margin-top: 1%;
+    background-color: #da7272;
+    border-radius: 10px;
+    border: 1px solid white;
+    padding: 1%;
+    width: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#titulo{
+    text-align: center;
+    color: #99AAB5;
+}
+.btnBuscar{
+    margin-left: 5%;
+    border-radius: 50%;
+    font-size: x-large;
+    padding: 1%;
+    width: 50px;
+}
+.error{
+    display: none;
+    color: rgb(247, 94, 94) !important;
+    font-size: small;
+    text-align: start;
+}
+.busqueda{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+#divFieldset{
+    width: 80%;
+}
+#buscar{
+    color: white;
+}

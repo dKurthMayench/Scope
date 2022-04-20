@@ -1,0 +1,293 @@
+html, body{
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #23272A;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.btn{
+    padding-top: 6%;
+    padding-bottom: 6%;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: #7289DA;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #889ada;
+}
+.instruccion > legend{
+    font-size: small;
+}
+fieldset{
+    cursor: text;
+    text-align: start;
+    border-radius: 10px;
+}
+fieldset > legend{
+    font-size: small;
+}
+.input{
+    border: none;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+}
+.input:focus{
+    outline: none;
+}
+#header{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2C2F33;
+    padding: .3em;
+}
+.inicio{
+    font-weight: 700;
+    text-align: center;
+    width: 10%;
+    min-width: 120px;
+}
+.busquedaCat{
+    width: 20%;
+}
+.busquedaArt{
+    width: 40%;
+}
+.perfil{
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: .5em;
+    display: flex;
+    flex-direction: row;
+    width: 120px;
+    height: 55px;
+    padding: 5px;
+}
+.perfil:hover{
+    background-color: #23272A;
+}
+.perfil img{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+}
+.alias{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px;
+    margin-left: 0px;
+    padding-left: 5px;
+    border-left: 1px solid white;
+}
+.rep{
+    text-align: center;
+    width: 100%;
+    color: #99AAB5;
+    font-size: xx-small;
+}
+.btnInicio{
+    padding: 15px;
+    color: white;
+    font-weight: 600;
+    font-size: x-large;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 4vh;
+    border-bottom: 2px solid #7289DA;
+}
+.nav div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    width: calc(100% / 4);
+}
+.nav div:not(:first-child){
+    border-left: 1px solid #889ada;
+}
+.nav div:hover{
+    cursor: pointer;
+    background-color: #7289DA;
+}
+.nav div.selected{
+    background-color: #7289DA;
+}
+
+#content{
+    width: 57vw;
+    max-height: 83vh;
+    overflow: auto;
+    margin-left: 1vw;
+    margin-top: 1vw;
+    float: left;
+}
+#publicar{
+    width: 100%;
+    padding: 20px;
+}
+
+#aside{
+    border-radius: .5em;
+    background-color: #2C2F33;
+    width: 37vw;
+    margin-right: 1vw;
+    margin-top: 1vw;
+    padding: 1vw;
+    float: left;
+    border: 1px solid white;
+}
+.articulos{
+    width: 100%;
+}
+.articulo{
+    padding: 20px;
+    cursor: pointer;
+    max-width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-radius: .5em;
+    border: 1px solid white;
+    background-color: #2C2F33;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.articulo > div:nth-child(2){
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+}
+.articulo:hover{
+    background-color: #23272A;
+}
+.crearArt{
+    width: 100%;
+}
+#crearPublicacion{
+    width: 100%;
+}
+.artAside{
+    margin-top: 1%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.votos, .comentarios{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.votos div:first-child, .comentarios div:first-child{
+    color: #99AAB5;
+    font-size: xx-small;
+}
+.votos div:last-child, .comentarios div:last-child{
+    text-align: center;
+}
+.nombreCat{
+    color: #99AAB5;
+    font-size: xx-small;
+    width: 100%;
+    margin-bottom: 1%;
+}
+.comentarios{
+    margin-right: 5%;
+}
+.btnBuscar{
+    margin-left: 5%;
+    border-radius: 50%;
+    font-size: x-large;
+    padding: 1%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.error{
+    display: none;
+    color: rgb(247, 94, 94) !important;
+    font-size: small;
+    text-align: start;
+}
+.busqueda{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+#divFieldset{
+    width: 80%;
+}
+#buscar{
+    color: white;
+}
+
+#content + hr{
+    float: left;
+    border: none;
+    border-left: 1px solid hsla(200, 10%, 50%,100);
+    height: 83%;
+    width: 1px;
+    margin: 1vw;
+    margin-left: 0;
+}
+#aside textarea{
+    resize: vertical;
+}
+#aside fieldset{
+    margin-top: 2%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #23272A;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: #7289DA;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track:hover ::-webkit-scrollbar-thumb {
+    background: #72da77;
+}
+#btnCrearCat{
+    margin-top: 3%;
+}
+#nombreCategoria{
+    color: white;
+}
+#descCategoria{
+    color: white;
+}
+a, a:active, a:hover{
+    color: white;
+    text-decoration: none;
+}

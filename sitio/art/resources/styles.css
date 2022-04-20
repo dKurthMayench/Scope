@@ -1,0 +1,447 @@
+html, body{
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #23272A;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.btn{
+    padding: 5%;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: #7289DA;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #889ada;
+}
+.instruccion > legend{
+    font-size: small;
+}
+fieldset{
+    cursor: text;
+    text-align: start;
+    border-radius: 10px;
+}
+fieldset > legend{
+    font-size: small;
+}
+.input{
+    color: white;
+    border: none;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+}
+.input:focus{
+    outline: none;
+}
+#header{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2C2F33;
+    padding: .3em;
+}
+.inicio{
+    font-weight: 700;
+    text-align: center;
+    width: 10%;
+    min-width: 120px;
+}
+.busquedaCat{
+    width: 20%;
+}
+.busquedaArt{
+    width: 40%;
+}
+.perfil{
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: .5em;
+    display: flex;
+    flex-direction: row;
+    width: 120px;
+    height: 55px;
+    padding: 5px;
+}
+.perfil:hover{
+    background-color: #23272A;
+}
+.perfil img{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+}
+.alias{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px;
+    margin-left: 0px;
+    padding-left: 5px;
+    border-left: 1px solid white;
+}
+.rep{
+    text-align: center;
+    width: 100%;
+    color: #99AAB5;
+    font-size: xx-small;
+}
+.btnInicio{
+    padding: 15px;
+    color: white;
+    font-weight: 600;
+    font-size: x-large;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 4vh;
+    border-bottom: 2px solid #7289DA;
+}
+.nav div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    width: calc(100% / 4);
+}
+.nav div:not(:first-child){
+    border-left: 1px solid #889ada;
+}
+.nav div:hover{
+    cursor: pointer;
+    background-color: #7289DA;
+}
+.nav div.selected{
+    background-color: #7289DA;
+}
+.iframely-responsive {
+    top: 0; left: 0; width: 100%; height: 0;
+    position: relative; padding-bottom: 56.25%;
+}
+.iframely-responsive>* {
+    top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;
+}
+#form{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#titulo{
+    text-align: center;
+    color: #99AAB5;
+}
+.selectCategoria{
+    width: 50%;
+    margin-bottom: 1%;
+}
+#categoria{
+    color: white;
+    font-weight: bold;
+}
+#resultados{
+    width: 100%;
+    margin-top: 1%;
+}
+#linea{
+    border: 1px solid white;
+    width: 0%;
+    opacity: 0;
+}
+.desplegar{
+    animation: desplegar 0.5s ease-in-out forwards;
+}
+@keyframes desplegar {
+    0%{
+        opacity: 0;
+        width: 0%
+    }
+    100%{
+        opacity: 1;
+        width: 100%;
+    }
+}
+.replegar{
+    animation: replegar 0.5s ease-in-out forwards;
+}
+@keyframes replegar {
+    0%{
+        opacity: 1;
+        width: 100%
+    }
+    100%{
+        opacity: 0;
+        width: 0%;
+    }
+}
+.resultado{
+    width: 100%;
+    padding-top: .1em;
+    padding-bottom: .1em;
+    border: 2px solid #2C2F33;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    cursor: pointer;
+}
+.resultado:hover{
+    background-color: #fff;
+    color:#23272A;
+}
+.error{
+    display: none;
+    color: rgb(247, 94, 94) !important;
+    font-size: small;
+    text-align: start;
+}
+#articulo{
+    border-radius: .5em;
+    border: 1px solid white;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    max-height: 60vh;
+    padding: 2%;
+    overflow: hidden;
+    background-color: #2C2F33;
+}
+.content{
+    max-height: 40vh;
+    overflow-y: auto;
+}
+.comentarios{
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: .5em;
+    border: 1px solid white;
+    padding: 2%;
+    padding-top: 1%;
+    background-color: #2C2F33;
+}
+.comentador{
+    font-size: small;
+    color:#99AAB5;
+}
+.drch{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.cabecera{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+.cabecera{
+    justify-content: space-between;
+    align-items: center;
+}
+.nVotos{
+    font-size: xx-large;
+}
+.imagen{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    float: left;
+    margin-right: .5%;
+}
+.comentario{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #7289DA;
+    border-radius: .5em;
+    padding: 1%;
+    margin-bottom: 1%;
+    background-color: #23272A;
+}
+.cuerpo{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+.comentario>div{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.comentario .votos{
+    width: 20%;
+}
+.comment{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 2%;
+    width: auto;
+}
+#fieldsetComment{
+    width: 100%;
+}
+.btnComentar{
+    padding: 1.5%;
+    width: 20%;
+}
+.op{
+    color: #99AAB5
+}
+canvas{
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+}
+.drch{
+    align-items: center;
+}
+.like, .dislike{
+    cursor: pointer;
+    font-size: xx-large;
+}
+#articulo.liked .like{
+    color: #72da77;
+}
+#articulo.disliked .dislike{
+    color: #da7272;
+}
+.comentario.liked .like{
+    color: #72da77;
+}
+.comentario.disliked .dislike{
+    color: #da7272;
+}
+textarea{
+    resize: vertical;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #23272A;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: #7289DA;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track:hover ::-webkit-scrollbar-thumb {
+    background: #72da77;
+}
+a:link {
+    color: #7289DA;
+    background-color: transparent;
+}
+a:visited {
+    color: #da7272;
+    background-color: transparent;
+}
+a:hover {
+    color: #fff;
+    background-color: transparent;
+}
+a:active {
+    color: #889ada;
+    background-color: transparent;
+}
+.btnBuscar{
+    margin-left: 5%;
+    border-radius: 50%;
+    font-size: x-large;
+    padding: 1%;
+    width: 50px;
+}
+.error{
+    display: none;
+    color: rgb(247, 94, 94) !important;
+    font-size: small;
+    text-align: start;
+}
+.busqueda{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+#divFieldset{
+    width: 80%;
+}
+#buscar{
+    color: white;
+}
+.editarComentario .guardar{
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: #72da77;
+}
+.borrarComentario .descartar{
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: #da7272;
+}
+.editarComentario .guardar:hover{
+    background-color: #41d848;
+}
+.borrarComentario .descartar:hover{
+    background-color: #d43d3d;
+}
+.izqd a, .izqd a:active, .izqd a:hover{
+    color: white;
+    text-decoration: none;
+}
+.guardar{
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: #23272A;
+    color: white;
+    padding: 10%;
+    width: auto;
+}
+.guardar:hover{
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: #72da77;
+    color: black;
+}
+.guardada{
+    width: auto;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: #72da77;
+    color: black;
+    padding: 10%;
+}
+
+.guardada:hover{
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: #23272A;
+    color: white;
+    padding: 10%;
+    width: auto;
+}

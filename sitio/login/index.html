@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <!--jquery-->
+    <script type="text/javascript" src="HTTP://code.jquery.com/jquery-latest.js"></script>
+    <script src="resources/index.js"></script>
+    <script src="resources/styles.js"></script>
+    <link rel="stylesheet" href="resources/styles.css">
+</head>
+<body>
+    <div id="inicio">
+        <div class="body">
+            <form id="formInicio" method="post" action="../home/">
+                <div class="item divUsuario">
+                    <div class="header">
+                        Iniciar Sesión
+                    </div>
+                    <fieldset id="fieldsetUser" class="instruccion">
+                        <legend>Introduce tu usuario</legend>
+                        <input type="text" class="input usuario" id="user" name="user" placeholder="Usuario">
+                    </fieldset>
+                    <div class="error" id="errorUsuarioVacio">
+                        Este campo es obligatorio
+                    </div>
+                    <div class="error" id="errorUsuarioNoExiste">
+                        El usuario no existe. <a href="../register/" style="color: #7289DA">¿Crear cuenta?</a>
+                    </div>
+                    <button type="button" class="btn validarUsuario" onclick="validarUsuario()">Siguiente</button>
+                    <span class="consejoCrearCuenta">
+                        ¿No tienes una cuenta? Crea una <a href="../register/" style="color: #7289DA">aquí</a>.
+                    </span>
+                </div>
+                <div class="item divPwd">
+                    <div class="header">
+                        Bienvenido
+                    </div>
+                    <fieldset id="fieldsetPwd" class="instruccion">
+                        <legend>Introduce tu contraseña</legend>
+                        <input type="password" class="input Pwd" id="pwd" name="pwd" placeholder="Contraseña">
+                    </fieldset>
+                    <div class="error" id="errorPwdVacio">
+                        Este campo es obligatorio
+                    </div>
+                    <div class="error" id="errorPwdIncorrecta">
+                        La contraseña no es correcta
+                    </div>
+                    <div class="error" id="errorPwdIlegal">
+                        La contraseña no puede contener "#"
+                    </div>
+                    <button type="button" class="btn validarPwd" onclick="validarPwd()">Siguiente</button>
+                    <button type="button" class="btn atras" onclick="displayUserInput()">Atrás</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

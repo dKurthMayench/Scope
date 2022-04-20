@@ -1,0 +1,148 @@
+html, body{
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #23272A;
+}
+.body{
+    text-align: center;
+    height: 60%;
+}
+#inicio{
+    margin-top: 25vh;
+    overflow: hidden; 
+    background-color: #2C2F33;
+    color: #99AAB5;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+}
+.btn{
+    padding: 5%;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: #7289DA;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #889ada;
+}
+.item :not(.header){
+    color: #FFFFFF;
+}
+.instruccion > legend{
+    font-size: small;
+}
+fieldset{
+    cursor: text;
+    text-align: start;
+    border-radius: 10px;
+}
+.input{
+    border: none;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+}
+.input:focus{
+    outline: none;
+}
+.header{
+    font-size: xx-large;
+    font-weight: bold;
+}
+/***
+SIGUIENTE
+***/
+.slide-left-usuario {
+	-webkit-animation: slide-left-usuario .5s ease-in forwards;
+	animation: slide-left-usuario .5s ease-in forwards;
+}
+@keyframes slide-left-usuario {
+    0% {
+        left: 0px; 
+    }
+    100% {
+        left: -400px; 
+    }
+}
+.slide-left-pwd {
+	-webkit-animation: slide-left-pwd .5s ease-in forwards;
+	animation: slide-left-pwd .5s ease-in forwards;
+}
+@keyframes slide-left-pwd {
+    0% {
+        left: 400px;
+    }
+    100% {
+        left: 0px; 
+    }
+}
+/***
+ATRAS
+***/
+.slide-right-usuario {
+	-webkit-animation: slide-right-usuario .5s ease-in forwards;
+	animation: slide-right-usuario .5s ease-in forwards;
+}
+@keyframes slide-right-usuario {
+    0% {
+        left: -400px; 
+    }
+    100% {
+        left: 0px; 
+    }
+}
+.slide-right-pwd {
+	-webkit-animation: slide-right-pwd .5s ease-in forwards;
+	animation: slide-right-pwd .5s ease-in forwards;
+}
+@keyframes slide-right-pwd {
+    0% {
+        left: 0px;
+    }
+    100% {
+        left: 400px; 
+    }
+}
+.error{
+    display: none;
+    color: rgb(247, 94, 94) !important;
+    font-size: small;
+    text-align: start;
+}
+#formInicio{
+    width: 100%;
+    height: 100%;
+}
+.item{
+    height: 80%;
+    position: relative;
+}
+.item.divPwd{
+    left: 500px;
+    top: -80%;
+}
+.item>*{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.consejoCrearCuenta{
+    font-size: small;
+}
