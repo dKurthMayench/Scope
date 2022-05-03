@@ -6,7 +6,9 @@ $(document).ready(function() {
     $("#guardar").click(function () {
         guardar();
     });
-
+    $("#eliminar").click(function () {
+        eliminar();
+    });
     $("#btnComentar").click(function (){
         if ($("#comentar").val().length > 100){
             $('#fieldsetComment').css({ "border-color": "rgb(247, 94, 94)" });
@@ -122,7 +124,6 @@ function votarCom(voto, idCom){
     });
 }
 
-
 function validarBusqueda(){
     if($("#buscar").val() == ""){
         $('#errorBuscarVacio').css({"display" : "block"});
@@ -142,6 +143,24 @@ function guardar(){
         },
         success: function (data){
             location.reload();
+        },
+        error: function (data) {
+            console.log("error al procesar los datos");
+            console.log(data);
+        }
+    });
+}
+
+function eliminar(){
+    var id = $("#idArticulo").val();
+    $.ajax({
+        type: 'POST',
+        url: "../../conexion/deleteArticulo.php",
+        data: {
+            idArt: id,
+        },
+        success: function (data){
+            location.href="../home/";
         },
         error: function (data) {
             console.log("error al procesar los datos");

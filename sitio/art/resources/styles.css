@@ -445,3 +445,16 @@ a:active {
     padding: 10%;
     width: auto;
 }
+
+#eliminar{
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: #da7272;
+    color: black;
+    padding: 10%;
+    width: auto;
+}
+
+#eliminar:hover{ 
+    background-color: #d43d3d;
+}
