@@ -1,5 +1,4 @@
 var control = true;
-
 var ed;
 
 $(document).ready(function() {

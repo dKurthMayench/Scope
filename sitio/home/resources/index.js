@@ -23,6 +23,7 @@ $(document).ready(function() {
         $('#fieldsetDescCategoria legend').css({"color" : ""});
     });
 
+    //se mostrará la pestaña "general" al cargar la pagina
     getPublicacionesGeneral();
 });
 
@@ -121,6 +122,7 @@ function generarPagina(publicaciones){
     }
 }
 
+//mediante DOM creo la lista de publicaciones
 function crearArticulo(publicacion){
     var articulo = document.createElement("a");
     articulo.setAttribute("class", "articulo");

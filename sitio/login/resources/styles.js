@@ -23,6 +23,7 @@ $(document).ready(function() {
 
 //animación en caso de que el input del usuario sea válido
 function displayPwdInput(){
+    //si no espero 0.5 segundos para el focus, se rompe la animacion
     setTimeout(function () {
         $("#pwd").focus();
     }, 500);

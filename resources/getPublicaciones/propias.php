@@ -3,11 +3,12 @@
     require_once("../../conexion/utils.php");
     if(!isset($con)) $con = new mysqli("localhost", "root", "", "Scope");
 
+    //recupero las publicaciones creadas por el propio usuario
     $res = $con->query("SELECT * FROM articulos WHERE op = '".$_SESSION['user']['alias']."'");
     if($res->num_rows < 1) echo "vacio";
     else{
         while ($row = mysqli_fetch_assoc($res)) $publicaciones[] = $row;
-        
+        //recupero la informacion de cada publicacion
         for ($i = 0; $i < count($publicaciones); $i++){
             $res = $con->query("SELECT * FROM comentarios WHERE articulo = ".$publicaciones[$i]['id']);
             $comentarios = $res->num_rows;

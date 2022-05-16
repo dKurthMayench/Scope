@@ -5,8 +5,16 @@
     else {
         if ($_SESSION['codigo'] != $_GET['codigo']) echo "not match";
         else {
-            activate($_GET['email']);
-            echo 0;
+            //compruebo si el codigo ha expirado o no
+            $session_life = time() - $_SESSION['timeout'];
+            if($session_life > (60*5)) {
+                session_destroy();
+                echo "expired";
+            }
+            }else{
+                activate($_GET['email']);
+                echo 0;
+            }
         }
     }
 ?>

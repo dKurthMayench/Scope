@@ -2,9 +2,10 @@
     session_start();
     require_once("../../conexion/utils.php");
     if(!isset($con)) $con = new mysqli("localhost", "root", "", "Scope");
+    //recupero las publicaciones que ha votado el usuario
     $res = $con->query("SELECT * FROM articulos WHERE id IN (SELECT art FROM votosxarticulos WHERE alias='".$_SESSION['user']['alias']."' AND positivo=TRUE)");
     while ($row = mysqli_fetch_assoc($res)) $publicaciones[] = $row;
-    
+    //recupero la informacion de cada publicacion
     for ($i = 0; $i < count($publicaciones); $i++){
         
         $res = $con->query("SELECT * FROM comentarios WHERE articulo = ".$publicaciones[$i]['id']);

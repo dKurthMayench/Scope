@@ -14,6 +14,8 @@ $(document).ready(function() {
     $("#btnBuscar").click(function () {
         validarBusqueda();
     });
+
+    //oculto los errores de la barra de busqueda
     $("#buscar").on("input", function (){
         $('#errorBuscarVacio').css({"display" : ""});
         $('#fieldsetBuscar').css({"border-color" : ""});

@@ -11,6 +11,8 @@ $(document).ready(function() {
     $("#fieldsetPwdConfirm").click(function () {
         $("#pwdConfirm").focus();
     });
+
+    //oculto los errores si el usuario teclea algo en un input
     $("#user").on('input', function() {
         $("#fieldsetUser, #fieldsetUser legend").css({"border-color" : "", "color" : ""});
         $("#errorUsuarioExiste, #errorUsuarioVacio, #errorUsuarioLargo, #errorUsuarioSimbolos").css({"display" : "none"});

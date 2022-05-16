@@ -130,6 +130,7 @@ function cambiarPwd(){
 }
 
 function validarDescripcion(){
+    //si la descripcion supera los 255 caracteres, error
     if ($("#desc").val().length > 255) {
         $('#descripcionLarga').css("display", "block");
         $('#fieldsetDesc').css({ "border-color": "rgb(247, 94, 94)" });
@@ -139,6 +140,7 @@ function validarDescripcion(){
 }
 
 function validarOldPwd() {
+    //verifica que la contraseña sea correcta
     if ($("#oldpwd").val() == "") {
         $('#errorOldPwdVacio').css({"display" : "block"});
         $('#fieldsetOldPwd').css({"border-color" : "rgb(247, 94, 94)"});
@@ -164,6 +166,7 @@ function validarOldPwd() {
 }
 
 function validarPwd() {
+    //verifica que la nueva contraseña sea segura
     if ($("#pwd").val() == "") {
         $('#errorPwdVacio').css({ "display": "block" });
         $('#fieldsetPwd').css({ "border-color": "rgb(247, 94, 94)" });
@@ -183,6 +186,7 @@ function validarPwd() {
 }
 
 function validarPwdConfirm() {
+    //verifica que las contraseñas coincidan
     if ($("#pwd").val() == "") {
         $('#errorPwdConfirmVacio').css({ "display": "block" });
         $('#fieldsetPwdConfirm').css({ "border-color": "rgb(247, 94, 94)" });
@@ -212,6 +216,7 @@ function correcto(x){
 }
 
 function validarNombre(){
+    //verifica que el nombre no tiene simbolos
     if ($("#nombre").val().length > 100){
         $('#errorNombreLargo').css({ "display": "block" });
         $('#fieldsetNombre').css({ "border-color": "rgb(247, 94, 94)" });
@@ -227,6 +232,7 @@ function validarNombre(){
 }
 
 function validarApellidos(){
+    //verifica que los apellidos no tengan simbolos
     if ($("#apellidos").val().length > 100){
         $('#errorApellidosLargo').css({ "display": "block" });
         $('#fieldsetApellidos').css({ "border-color": "rgb(247, 94, 94)" });

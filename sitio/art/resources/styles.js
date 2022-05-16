@@ -12,6 +12,7 @@ $(document).ready(function() {
     xhttp.open("GET", "../../conexion/existeImagen.php", true);
     xhttp.send();
     
+    //al escribir en el input de comentar, aparecera el boton de publicar comentario.
     $("#comentar").on("input", function () {
         $("#fieldsetComment, #fieldsetComment legend").css({"border-color" : "", "color" : ""});
         $("#errorComentarioLargo").css({"display" : "none"});
@@ -25,6 +26,7 @@ $(document).ready(function() {
         }
     });
 
+    //control de votos de articulos y comentarios (quitar/añadir votos)
     $("#articulo .likeA").click(function (){
         if($("#articulo").hasClass("liked")) $("#articulo").removeClass("liked");
         else $("#articulo").addClass("liked").removeClass("disliked");

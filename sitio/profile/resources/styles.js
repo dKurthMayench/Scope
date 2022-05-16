@@ -1,4 +1,5 @@
 $(document).ready(function (e) {
+    //estilo de la barra de navegacion
     $(".nav .cambiarPfp").addClass("selected");
     $(".nav").children().click(function () { 
         $(".nav").children().removeClass("selected");
@@ -14,6 +15,8 @@ $(document).ready(function (e) {
     $(".cambiarPwd").click(function () {
         cambiarPwd()
     });
+
+    //oculto los errores al teclear algo en un input, y muestro al usuario que tiene cambios sin guardar
     $("#nombre").on('input', function() {
         $("#fieldsetNombre, #fieldsetNombre legend").css({"border-color" : "", "color" : ""});
         $("#errorNombreFalso, #errorNombreLargo").css({"display" : "none"});

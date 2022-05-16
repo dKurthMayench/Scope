@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    //oculta los errores si el usuario teclea algo en un input
     $("#tituloArt").on('input', function() {
         $("#fieldsetTituloArt, #fieldsetTituloArt legend").css({"border-color" : "", "color" : ""});
         $("#errorTituloVacio, #errorTituloLargo").css({"display" : "none"});

@@ -13,6 +13,7 @@ $(document).ready(function() {
     xhttp.open("GET", "../../conexion/existeImagen.php?alias="+usuario, true);
     xhttp.send();
 
+    //seguir al usuario
     $("#follow").on("click", function(){
         $.ajax({
             type: 'POST',

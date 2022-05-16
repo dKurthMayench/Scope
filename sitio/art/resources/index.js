@@ -2,19 +2,23 @@ $(document).ready(function() {
     $("#header .perfil").click(function (){
         location.href = "../perfil/";
     });
-
     $("#guardar").click(function () {
         guardar();
     });
     $("#eliminar").click(function () {
         eliminar();
     });
+    $("#btnBuscar").click(function () {
+        validarBusqueda();
+    });
     $("#btnComentar").click(function (){
+        //si el comentario supera 100 caracteres, saltara un error
         if ($("#comentar").val().length > 100){
             $('#fieldsetComment').css({ "border-color": "rgb(247, 94, 94)" });
             $('#fieldsetComment legend').css({ "color": "rgb(247, 94, 94)" });
             $("#errorComentarioLargo").css("display", "block");
         }
+        //sino, se publicará
         else{
             var articulo = $("#idArticulo").val();
             var comentario = encodeURIComponent($("#comentar").val());
@@ -29,9 +33,6 @@ $(document).ready(function() {
         }
     });
 
-    $("#btnBuscar").click(function () {
-        validarBusqueda();
-    });
     $(".editarComentario").click(function (){
         var id = $(this).parent().attr("id");
         var textoOld = $(this).parent().find(".cuerpo .contenido").text();
@@ -65,6 +66,8 @@ $(document).ready(function() {
             $("#"+id).find(".guardar, .descartar").css("display", "none");
         });
     });
+
+
     $(".borrarComentario").click(function (){
         var id = $(this).parent().attr("id").slice($(this).parent().attr("id").indexOf("_")+1);
         $.ajax({
@@ -125,6 +128,7 @@ function votarCom(voto, idCom){
 }
 
 function validarBusqueda(){
+    //si la barra de busqueda esta vacia, saltara un error
     if($("#buscar").val() == ""){
         $('#errorBuscarVacio').css({"display" : "block"});
         $('#fieldsetBuscar').css({"border-color" : "rgb(247, 94, 94)"});

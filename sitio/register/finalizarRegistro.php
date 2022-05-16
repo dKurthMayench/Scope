@@ -26,18 +26,8 @@
             $_SESSION['codigo'] = $codigo;
             send_mail($_POST['email'], $codigo);
             
-            //$inactive = 5 minutos
-            $inactive = 60*5;
-            
             //meto un time() en la variable de sesion
             $_SESSION['timeout'] = time();
-
-
-            if (isset($_SESSION['codigo'])) {
-                //compruebo si el codigo ha expirado o no
-                $session_life = time() - $_SESSION['timeout'];
-                if($session_life > $inactive) session_destroy();
-            }
         }
         echo "<input type='hidden' name='email' id='email' value='".$_POST['email']."'>";
         if(!isset($con)) $con = new mysqli("localhost", "root", "", "Scope");
