@@ -105,7 +105,7 @@
                     <div class="datosNombre">
                         <fieldset id="fieldsetNombre" class="instruccion">
                             <legend>Nombre</legend>
-                            <input type="text" class="input nombre" id="nombre" name="nombre" placeholder="Nombre" value="<?php echo $_SESSION["user"]["nombre"]; ?>">
+                            <input type="text" class="input nombre" id="nombre" name="nombre" placeholder="Nombre" value="<?php if(isset($_SESSION['user']['nombre'])) echo $_SESSION["user"]["nombre"]; ?>">
                         </fieldset>
                         <div class="error" id="errorNombreFalso">Introduce un nombre real.</div>
                         <div class="error" id="errorNombreLargo">Máximo 100 caracteres.</div>
@@ -113,7 +113,7 @@
                     <div class="datosApellidos">
                         <fieldset id="fieldsetApellidos" class="instruccion">
                             <legend>Apellidos</legend>
-                            <input type="text" class="input apellidos" id="apellidos" name="apellidos" placeholder="Apellidos" value="<?php echo $_SESSION["user"]["apellidos"]; ?>">
+                            <input type="text" class="input apellidos" id="apellidos" name="apellidos" placeholder="Apellidos" value="<?php if(isset($_SESSION['user']['apellidos'])) echo $_SESSION["user"]["apellidos"]; ?>">
                         </fieldset>
                         <div class="error" id="errorApellidosFalso">Introduce apellidos reales.</div>
                         <div class="error" id="errorApellidosLargo">Máximo 100 caracteres.</div>

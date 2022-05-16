@@ -25,6 +25,12 @@ $(document).ready(function() {
         $(".articulos").empty();
         getPublicacionesPropias();
     });
+    $(".siguiendo").click(function (){
+        $(".nav div").removeClass("selected");
+        $(this).addClass("selected");
+        $(".articulos").empty();
+        getPublicacionesSiguiendo();
+    });
 
     //ajax para recuperar la foto de perfil
     var xhttp = new XMLHttpRequest();

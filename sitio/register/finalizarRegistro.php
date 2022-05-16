@@ -17,20 +17,31 @@
         if(!isset($_SESSION['codigo'])){
 
             $codigo = random_int(100000, 999999);
+            
+            //este echo es porque el mail() ha dejado de funcionar para aplicaciones "no seguras". Así puedo ver el código sin ir al correo y verificar si funciona todo.
+            echo $codigo;
+            //\\
+
+            //meto el codigo en una variable de sesion y envio el mail con el codigo
             $_SESSION['codigo'] = $codigo;
             send_mail($_POST['email'], $codigo);
             
+            //$inactive = 5 minutos
             $inactive = 60*5;
             
+            //meto un time() en la variable de sesion
             $_SESSION['timeout'] = time();
 
+
             if (isset($_SESSION['codigo'])) {
+                //compruebo si el codigo ha expirado o no
                 $session_life = time() - $_SESSION['timeout'];
                 if($session_life > $inactive) session_destroy();
             }
         }
         echo "<input type='hidden' name='email' id='email' value='".$_POST['email']."'>";
         if(!isset($con)) $con = new mysqli("localhost", "root", "", "Scope");
+        
         if(!isset($_SESSION['control']) || $_SESSION['control'] != 1){
             $pwd = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
             $con->query("INSERT INTO usuarios (alias, password, email) VALUES ('".$_POST['user']."','".$pwd."','".$_POST['email']."')");

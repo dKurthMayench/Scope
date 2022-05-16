@@ -29,6 +29,7 @@ function validarBusqueda(){
     }
     else $("#formBuscar").submit();
 }
+
 function cambiarPfp(){
     $('#titulo').html("Cambiar foto de perfil");
     //añado los event listeners
@@ -91,7 +92,8 @@ function cambiarUsuario(){
             contentType: false,
             processData: false,
             success: function (data) {
-                location.reload();
+                console.log("Cambios guardados.");
+                $("#submitDatos").css("display", "none");
             },
             error: function (data) {
                 console.log("error al procesar los datos");
@@ -143,8 +145,8 @@ function validarOldPwd() {
         $('#fieldsetOldPwd legend').css({"color" : "rgb(247, 94, 94)"});
     }
     else{
-        var pwd = $("#oldPwd").val();
-        var user = $("#user").val();
+        var pwd = encodeURIComponent($("#oldPwd").val());
+        var user = encodeURIComponent($("#user").val());
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200){

@@ -102,7 +102,7 @@ $(document).ready(function() {
                 categoria: $("#categoria").val(),
             },
             success: function (data){
-                location.href="../inicio";
+                location.href="../home";
             },
             error: function (data) {
                 console.log("error al procesar los datos");

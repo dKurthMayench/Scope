@@ -11,7 +11,6 @@ body{
     color: white;
 }
 .btn{
-    padding: 5%;
     padding-top: 6%;
     padding-bottom: 6%;
     width: 100%;
@@ -22,6 +21,19 @@ body{
 }
 .btn:hover{
     background-color: #889ada;
+}
+.btnSeguir{
+    padding: 2.5%;
+    height: 100%;
+    width: 30%;
+    border: none;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: #72da77;
+    cursor: pointer;
+}
+.btnSeguir:hover{
+    background-color: #57da5e;
 }
 .instruccion > legend{
     font-size: small;
@@ -43,6 +55,18 @@ fieldset > legend{
 }
 .input:focus{
     outline: none;
+}
+.alias{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px;
+    margin-left: 0px;
+    padding-left: 5px;
+    border-left: 1px solid white;
 }
 #header{
     display: flex;
@@ -85,18 +109,6 @@ fieldset > legend{
     border-radius: 50%;
     margin: 5px;
 }
-.alias{
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 5px;
-    margin-left: 0px;
-    padding-left: 5px;
-    border-left: 1px solid white;
-}
 .rep{
     text-align: center;
     width: 100%;
@@ -110,10 +122,84 @@ fieldset > legend{
     font-size: x-large;
 }
 #content{
-    max-height: 70vh;
+    height: 70vh;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 8%;
+    background-color: #2C2F33;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+}
+.left{
+    height: 90%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.right{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-left: 1px solid white;
+}
+.fila>div, #descripcion{
+    border-top-right-radius: 10px;
+}
+#foto{
+    height: 30vw;
+    width: 30vw;
+}
+#foto img{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.subtitulo{
+    border-bottom: 1px solid white;
+    font-weight: bold;
+}
+.contenido{
+    padding-top: 2%;
+}
+#descripcion, #alias, #nombre, #apellidos, #rep, #seguidores{
+    padding: 2%;
+    border-left: 1px solid white;
+    background-color: #23272A;
+}
+#descripcion{
+    width: 100%;
+}
+.fila{
+    padding: 2%;
+    width: 70% !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+#alias, #rep{
+    width: 45%;
+}
+#nombre {
+    width: 30%;
+}
+#apellidos{
+    width: 60%;
+}
+#seguidores{
+    width: 65%;
 }
 textarea{
     resize: vertical;

@@ -97,6 +97,23 @@ function getPublicacionesPropias(){
         }
     });
 }
+function getPublicacionesSiguiendo(){
+    $(".articulos").html("<h3>Siguiendo</h3><hr/>");
+    $.ajax({
+        type: 'POST',
+        url: "../../resources/getPublicaciones/siguiendo.php",
+        cache: false,
+        contentType: false,
+        success: function (data) {
+            if (data != "vacio") generarPagina(JSON.parse(data));
+            else vacio();
+        },
+        error: function (data) {
+            console.log("error al procesar los datos");
+            console.log(data);
+        }
+    });
+}
 
 function generarPagina(publicaciones){
     for(let i = 0; i < publicaciones.length; i++){
@@ -105,7 +122,7 @@ function generarPagina(publicaciones){
 }
 
 function crearArticulo(publicacion){
-    var articulo = document.createElement("div");
+    var articulo = document.createElement("a");
     articulo.setAttribute("class", "articulo");
 
     var nombreCat = document.createElement("div");
@@ -153,7 +170,7 @@ function crearArticulo(publicacion){
     divAux5.appendChild(titulo);
     divAux5.appendChild(aside);
     articulo.appendChild(divAux5);
-    articulo.addEventListener("click", function () {location.href = "../art/index.php?id="+publicacion.id;});
+    articulo.setAttribute("href", "../art/index.php?id="+publicacion.id);
     $("#content .articulos").append(articulo);
 }
 

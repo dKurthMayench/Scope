@@ -76,47 +76,52 @@
         <div class="publicados">
             Publicaciones propias
         </div>
-    </div>
-    <div id="content">
-        <div class="crearArt">
-            <div id="crearPublicacion" class="item itemPublicar">
-                <button id="publicar" type="button" class="btn publicar">Crear publicación</button>
-            </div>
-        </div>
-        <div class="articulos">
+        <div class="siguiendo">
+            Siguiendo
         </div>
     </div>
-    <hr/>
-    <div id="aside">
-        <form id="formCrearCat">
-            <h1>Crear Categoría</h1>
-            <hr/>
-            <div class="nombreCategoria">
-                <fieldset id="fieldsetNombreCategoria" class="instruccion">
-                    <legend>Nombre</legend>
-                    <input type="text" class="input nombreCategoria" id="nombreCategoria" name="nombreCategoria" placeholder="Nombre de la categoria">
-                </fieldset>
-                <div class="error" id="errorNombreNoDisponible">
-                    Esta categoría ya existe.
-                </div>
-                <div class="error" id="errorNombreVacio">
-                    Este campo no puede estar vacío.
-                </div>
-                <div class="error" id="errorNombreIlegal">
-                    No se admiten simbolos en el nombre de la categoría.
+    <div class="wrapper">
+        <div id="content">
+            <div class="crearArt">
+                <div id="crearPublicacion" class="item itemPublicar">
+                    <button id="publicar" type="button" class="btn publicar">Crear publicación</button>
                 </div>
             </div>
-            <div class="descCategoria">
-                <fieldset id="fieldsetDescCategoria" class="instruccion">
-                    <legend>Descripción</legend>
-                    <textarea class="input descCategoria" id="descCategoria" name="descCategoria" rows="4" placeholder="Descripción de la categoría (opcional)"></textarea>
-                </fieldset>
-                <div class="error" id="descripcionLarga">
-                    Máximo 255 caracteres
-                </div>
+            <div class="articulos">
             </div>
-            <button type="button" id="btnCrearCat" class="btn">Crear categoría</button>
-        </form>
+        </div>
+        <hr/>
+        <div id="aside">
+            <form id="formCrearCat">
+                <h1>Crear Categoría</h1>
+                <hr/>
+                <div class="nombreCategoria">
+                    <fieldset id="fieldsetNombreCategoria" class="instruccion">
+                        <legend>Nombre</legend>
+                        <input type="text" class="input nombreCategoria" id="nombreCategoria" name="nombreCategoria" placeholder="Nombre de la categoria">
+                    </fieldset>
+                    <div class="error" id="errorNombreNoDisponible">
+                        Esta categoría ya existe.
+                    </div>
+                    <div class="error" id="errorNombreVacio">
+                        Este campo no puede estar vacío.
+                    </div>
+                    <div class="error" id="errorNombreIlegal">
+                        No se admiten simbolos en el nombre de la categoría.
+                    </div>
+                </div>
+                <div class="descCategoria">
+                    <fieldset id="fieldsetDescCategoria" class="instruccion">
+                        <legend>Descripción</legend>
+                        <textarea class="input descCategoria" id="descCategoria" name="descCategoria" rows="4" placeholder="Descripción de la categoría (opcional)"></textarea>
+                    </fieldset>
+                    <div class="error" id="descripcionLarga">
+                        Máximo 255 caracteres
+                    </div>
+                </div>
+                <button type="button" id="btnCrearCat" class="btn">Crear categoría</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

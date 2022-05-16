@@ -1,11 +1,15 @@
 $(document).ready(function() {
-
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET","../../conexion/closeSesion.php", true);
+    xhttp.send();
+    
     //control del formulario con el teclado pq se hace muy pesado tener que estar dandole con el raton para hacer pruebas.
     /**
      * con enter vas desde el input usuario al input password.
      * tambien vas desde el input password a validarPwd();.
      * si estas con el focus en el input password, con el esc vuelves al input usuario.
      */
+    
     $(document).on('keyup',function(k) {
         if(k.which == 13) {
             if ($("#pwd").is(":focus")) validarPwd();

@@ -2,7 +2,7 @@
     session_start();
     require_once("../../conexion/utils.php");
     if(!isset($con)) $con = new mysqli("localhost", "root", "", "Scope");
-    $res = $con->query("SELECT * FROM articulos WHERE id IN (SELECT art FROM votosxarticulos WHERE alias='admin' AND positivo=TRUE)");
+    $res = $con->query("SELECT * FROM articulos WHERE id IN (SELECT art FROM votosxarticulos WHERE alias='".$_SESSION['user']['alias']."' AND positivo=TRUE)");
     while ($row = mysqli_fetch_assoc($res)) $publicaciones[] = $row;
     
     for ($i = 0; $i < count($publicaciones); $i++){

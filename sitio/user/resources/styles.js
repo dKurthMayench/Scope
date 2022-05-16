@@ -3,7 +3,6 @@ $(document).ready(function() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            //compruebo si existe una foto de perfil, y su extensión
             if (this.responseText == "error")  $("#fotoPerfil").attr("src", "../../resources/img/pfp/(default).jpg");
             else $("#fotoPerfil").attr("src", this.responseText);
         }

@@ -43,7 +43,7 @@
         </form>
         <div class="perfil">
             <img class="pfp" id="fotoPerfil">
-            <div id="alias">
+            <div class="alias">
                 <?php echo $_SESSION['user']['alias']; ?>
                 <div class="rep"><?php
                     if(!isset($con)) $con = new mysqli("localhost", "root", "", "Scope");
@@ -57,21 +57,55 @@
     <div id="content">
         <div class="left">
             <div id="foto">
-            <img class="pfpUSer" id="pfpUSer" alt="Foto de perfil del usuario">
-            </div>
-            <div id="descripcion">
-                <?php echo $usuario['descripcion']; ?>
+                <img class="pfpUSer" id="pfpUSer" alt="Foto de perfil del usuario">
             </div>
         </div>
         <div class="right">
-            <div id="alias">
-                <?php echo $usuario['alias']; ?>
+            <div class="fila">
+                <div id="alias">
+                    <div class="subtitulo">Alias</div>
+                    <div class="contenido"><?php echo $usuario['alias']; ?></div>
+                </div>
+                <div id="rep">
+                    <div class="subtitulo">Reputación</div>
+                    <div class="contenido"><?php 
+                        $res = $con->query("SELECT (SELECT COUNT(*) FROM votosxarticulos WHERE art IN (SELECT id FROM articulos WHERE op='".$usuario['alias']."') AND positivo=1) - (SELECT COUNT(*) FROM votosxarticulos WHERE art IN (SELECT id FROM articulos WHERE op='".$_SESSION['user']['alias']."') AND positivo=0) as rep");
+                        $rep = mysqli_fetch_assoc($res);
+                        echo $rep['rep']; ?></div>
+                </div>
             </div>
-            <div id="nombre">
-                <?php echo $usuario['nombre']; ?>
+            <div class="fila">
+                <div id="nombre">
+                    <div class="subtitulo">Nombre</div>
+                    <div class="contenido"><?php if(isset($usuario['nombre'])) echo $usuario['nombre']; else echo "Sin nombre" ?></div>
+                </div>
+                <div id="apellidos">
+                    <div class="subtitulo">Apellidos</div>
+                    <div class="contenido"><?php if(isset($usuario['apellidos'])) echo $usuario['apellidos']; else echo "Sin apellidos" ?></div>
+                </div>
             </div>
-            <div id="apellidos">
-                <?php echo $usuario['apellidos']; ?>
+            <div class="fila">
+                <div id="descripcion">
+                    <div class="subtitulo">Descripción</div>
+                    <div class="contenido"><?php if(isset($usuario['descripcion'])) echo $usuario['descripcion']; else echo "Sin descripción" ?></div>
+                </div>
+            </div>
+            <div class="fila">
+                <div id="seguidores">
+                    <div class="subtitulo">Seguidores</div>
+                    <div class="contenido"><?php 
+                        $res = $con->query("SELECT * FROM siguiendo WHERE siguiendo='".$usuario['alias']."'");
+                        echo $res->num_rows;
+                    ?></div>
+                </div>
+                <button id="follow" 
+                    <?php
+                        $res = $con->query("SELECT * FROM siguiendo WHERE seguidor='".$_SESSION['user']['alias']."' AND siguiendo='".$usuario['alias']."'");
+                        if($res->num_rows == 0) echo " class='seguir btnSeguir'>Seguir";
+                        else echo " class='siguiendo btnSeguir'>Dejar de seguir";
+                    ?>
+                </button>
+                <!-- cierro la etiqueta en el php por eso lo muestra como un error pero esta bien en el html final -->
             </div>
         </div>
     </div>
