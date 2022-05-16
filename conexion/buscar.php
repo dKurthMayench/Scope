@@ -1,5 +1,4 @@
 <?php
-    session_start();
     require_once("./utils.php");
     if(!isset($con)) $con = new mysqli("localhost", "root", "", "Scope");
     //recupero una lista de 5 nombres que coincidan con lo introducido por el usuario.

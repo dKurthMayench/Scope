@@ -1,6 +1,6 @@
 <?php
-    require_once("./utils.php");
     session_start();
+    require_once("./utils.php");
     if(isset($_GET['email'])){
         //si el correo introducido es del propio usuario, que no salte el error de que ya existe
         if($_SESSION['user']['email'] != $_GET['email']){

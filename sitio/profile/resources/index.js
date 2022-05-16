@@ -13,12 +13,10 @@ $(document).ready(
         $("#cerrarSesion").click(function(){
             cerrarSesion();
         });
-        cambiarPfp();
-        
-        
         $("#btnBuscar").click(function () {
             validarBusqueda();
         });
+        cambiarPfp();
     }
 );
 
@@ -35,22 +33,14 @@ function cambiarPfp(){
     $('#titulo').html("Cambiar foto de perfil");
     //añado los event listeners
     $('#pfp').click(function () { $('#imgUpload').trigger('click'); });
-    //compruebo si el usuario tiene foto de perfil
+    //ajax para recuperar la foto de perfil
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            //recupero el nombre de usuario
-            var usuario = $("#alias").contents().filter(function() {
-                return this.nodeType == Node.TEXT_NODE;
-            }).text();
             //elimino espacios que sobran en el string
-            usuario = usuario.replace(/\s+/g, '');
             //compruebo si existe una foto de perfil, y su extensión
-            if (this.responseText == "jpg")  $(".pfp").attr("src", "../../resources/img/pfp/"+usuario+".jpg");
-            else if (this.responseText == "jpeg")  $(".pfp").attr("src", "../../resources/img/pfp/"+usuario+".jpeg");
-            else if (this.responseText == "png")  $(".pfp").attr("src", "../../resources/img/pfp/"+usuario+".png");
-            else if (this.responseText == "gif")  $(".pfp").attr("src", "../../resources/img/pfp/"+usuario+".gif");
-            else  $(".pfp").attr("src", "../../resources/img/pfp/(default).jpg");
+            if (this.responseText == "error")  $("#pfp, #fotoPerfil").attr("src", "../../resources/img/pfp/(default).jpg");
+            else $("#pfp, #fotoPerfil").attr("src", this.responseText);
         }
     };
     xhttp.open("GET", "../../conexion/existeImagen.php", true);
@@ -68,7 +58,6 @@ function cambiarPfp(){
             contentType: false,
             processData: false,
             success: function (data) {
-                alert(data);
                 console.log(data);
                 location.reload();
             },
