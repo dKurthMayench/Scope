@@ -24,9 +24,10 @@ body{
     background-color: #2C2F33;
     width: 30%;
     height: 70%;
-    max-height: 70%;
-    overflow-y: auto;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .titulo{
     align-self: start;
@@ -40,19 +41,7 @@ body{
     align-self: start;
     text-align: justify;
     overflow-y: auto;
-    max-height: 80%;
-}
-#volver{
-    position: relative;
-    bottom: -30%;
-    padding: 5%;
-    padding-top: 6%;
-    padding-bottom: 6%;
-    width: 100%;
-    border: none;
-    border-radius: 10px;
-    background-color: #7289DA;
-    cursor: pointer;
+    height: 70%;
 }
 
 ::-webkit-scrollbar {

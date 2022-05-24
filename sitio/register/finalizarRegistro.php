@@ -14,32 +14,30 @@
     <?php
         session_start();
         require_once("../../conexion/utils.php");
-        if(!isset($_SESSION['codigo'])){
-
-            $codigo = random_int(100000, 999999);
-            
-            //este echo es porque el mail() ha dejado de funcionar para aplicaciones "no seguras". Así puedo ver el código sin ir al correo y verificar si funciona todo.
-            echo $codigo;
-            //\\
-
-            //meto el codigo en una variable de sesion y envio el mail con el codigo
-            $_SESSION['codigo'] = $codigo;
-            send_mail($_POST['email'], $codigo);
-            
-            //meto un time() en la variable de sesion
-            $_SESSION['timeout'] = time();
-        }
-        echo "<input type='hidden' name='email' id='email' value='".$_POST['email']."'>";
         if(!isset($con)) $con = new mysqli("localhost", "root", "", "Scope");
+        //muevo la info a variables de sesión
+        if (!isset($_SESSION['pwd'])) $_SESSION['pwd'] = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
+        if (!isset($_SESSION['alias'])) $_SESSION['alias'] = $_POST['user'];
+        if (!isset($_SESSION['email'])) $_SESSION['email'] = $_POST['email'];
+
+        //aunque el usuario recargue la página, mysql no insertará otro registro ya que la clave primaria estaría duplicandose así que no hace falta que compruebe si ya existe o no
+        $con->query("INSERT INTO usuarios (alias, password, email) VALUES ('".$_SESSION['alias']."','".$_SESSION['pwd']."','".$_SESSION['email']."')");
         
-        if(!isset($_SESSION['control']) || $_SESSION['control'] != 1){
-            $pwd = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
-            $con->query("INSERT INTO usuarios (alias, password, email) VALUES ('".$_POST['user']."','".$pwd."','".$_POST['email']."')");
-            $_SESSION['control'] = 1;
-        }
+        if(!isset($_SESSION['codigo'])){
+            //meto el codigo en una variable de sesion y envio el mail con el codigo
+            $_SESSION['codigo'] = random_int(100000, 999999);
+            send_mail($_SESSION['email'], $_SESSION['codigo']);
+            //meto en la variable de sesion el momento actual + 5 minutos (el código expirará en 5 minutos)
+            $_SESSION['timeout'] = time()+(60*5);
+            //este echo es porque el mail() ha dejado de funcionar para aplicaciones "no seguras". Así puedo ver el código sin ir al correo y verificar si funciona todo.
+            echo $_SESSION['codigo'];
+            //\\
+        }        
+        echo $_SESSION['codigo'];        
+        echo "<input type='hidden' name='email' id='email' value='".$_SESSION['email']."'>";
         echo '<div class="item divUsuario">
             <div class="header">
-                Se ha enviado el codigo de verifiación a '.$_POST['email'].'
+                Se ha enviado el codigo de verifiación a '.$_SESSION['email'].'
             </div>
             <fieldset id="fieldsetUser" class="instruccion">
                 <legend>Introduce el código</legend>
