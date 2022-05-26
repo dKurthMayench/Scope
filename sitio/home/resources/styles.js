@@ -44,4 +44,34 @@ $(document).ready(function() {
     };
     xhttp.open("GET", "../../conexion/existeImagen.php", true);
     xhttp.send();
+    window.onresize = function () {fitText("nav")};
 });
+
+
+//no funciona (creo que porque es display: flex y pasa algo raro al calcular el width)
+//comprueba si el texto se sale del div y cambia el tamaño de la fuente
+function fitText(outputSelector){
+    for (let i = 0; i < document.getElementById(outputSelector).getElementsByTagName("div"); i++){
+        const maxFontSize = 50;
+        let outputDiv = document.getElementById(outputSelector).getElementsByTagName("div")[i];
+        let width = outputDiv.clientWidth;
+        let contentWidth = outputDiv.scrollWidth;
+        let fontSize = parseInt(window.getComputedStyle(outputDiv, null).getPropertyValue('font-size'),10);
+        if (contentWidth > width){
+            fontSize = Math.ceil(fontSize * width/contentWidth,10);
+            fontSize =  fontSize > maxFontSize  ? fontSize = maxFontSize  : fontSize - 1;
+            outputDiv.style.fontSize = fontSize+'px';   
+        }else{
+            while (contentWidth === width && fontSize < maxFontSize){
+                fontSize = Math.ceil(fontSize) + 1;
+                fontSize = fontSize > maxFontSize  ? fontSize = maxFontSize  : fontSize;
+                outputDiv.style.fontSize = fontSize+'px';   
+                width = outputDiv.clientWidth;
+                contentWidth = outputDiv.scrollWidth;
+                if (contentWidth > width){
+                    outputDiv.style.fontSize = fontSize-1+'px'; 
+                }
+            }
+        }
+    }
+}

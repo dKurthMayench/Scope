@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400');
+
 html, body{
     width: 100vw;
     height: 100vh;
@@ -18,7 +20,7 @@ body{
     background-color: #2C2F33;
     color: #99AAB5;
     font-size: large;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins", Arial, Sans-Serif;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;

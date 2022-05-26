@@ -52,7 +52,7 @@
         <form id='formBuscar' class="busqueda" method='post' action="../busqueda/">
             <div id="divFieldset">
                 <fieldset id="fieldsetBuscar">
-                    <legend>Buscar</legend>
+                    <legend>Buscar</legend>                                                                     
                     <input type="text" class="input buscar" id="buscar" name="buscar" placeholder="Búsqueda">
                 </fieldset>
                 <div class="error" id="errorBuscarVacio">

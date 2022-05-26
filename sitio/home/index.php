@@ -63,7 +63,7 @@
             </div>
         </div>
     </div>
-    <div class="nav">
+    <div id="nav">
         <div class="general">
             General
         </div>
