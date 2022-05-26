@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400');
+body{
+  font-family: "Poppins", Arial, Sans-Serif;
+  background-color: rgb(54,57,63);
+}
+.titulo{
+  color: #fff;
+}
+
+.cuerpo{
+  color: #dfddde
+}
 
 .sidenav {
   height: 100%;
