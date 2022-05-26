@@ -44,11 +44,11 @@ body{
     width: 100%;
     border: none;
     border-radius: 10px;
-    background-color: #7289DA;
+    background-color: rgb(88, 101, 242);
     cursor: pointer;
 }
 .btn:hover{
-    background-color: #889ada;
+    background-color: rgb(71, 82, 196);
 }
 *{
     color: #FFFFFF;

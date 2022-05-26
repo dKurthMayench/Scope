@@ -17,11 +17,11 @@ body{
     width: 100%;
     border: none;
     border-radius: 10px;
-    background-color: #7289DA;
+    background-color: rgb(88, 101, 242);
     cursor: pointer;
 }
 .btn:hover{
-    background-color: #889ada;
+    background-color: rgb(71, 82, 196);
 }
 .instruccion > legend{
     font-size: small;
@@ -113,7 +113,7 @@ fieldset > legend{
     font-size: x-large;
 }
 #informacion{
-    border: 1px solid #7289DA;
+    border: 1px solid rgb(88, 101, 242);
     border-radius: .5em;
     padding: 3%;
     margin: auto;
@@ -148,7 +148,7 @@ fieldset input{
     flex-wrap: nowrap;
     align-items: center;
     height: 4vh;
-    border-bottom: 2px solid #7289DA;
+    border-bottom: 2px solid rgb(88, 101, 242);
 }
 .nav div{
     display: flex;
@@ -159,14 +159,14 @@ fieldset input{
     width: calc(100% / 3);
 }
 .nav div:not(:first-child){
-    border-left: 1px solid #889ada;
+    border-left: 1px solid rgb(71, 82, 196);
 }
 .nav div:hover{
     cursor: pointer;
-    background-color: #7289DA;
+    background-color: rgb(88, 101, 242);
 }
 .nav div.selected{
-    background-color: #7289DA;
+    background-color: rgb(88, 101, 242);
 }
 .error{
     display: none;

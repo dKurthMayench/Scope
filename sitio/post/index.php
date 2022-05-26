@@ -73,7 +73,7 @@
                     Este campo es obligatorio
                 </div>
                 <div class="error" id="errorCategoriaNoExiste">
-                    Esta categoria no existe, <a href="../home/" style="color: #7289DA">¿Quieres crearla tú?</a>
+                    Esta categoria no existe, <a href="../home/" style="color: rgb(88, 101, 242)">¿Quieres crearla tú?</a>
                 </div>
             </div>
         </div>
