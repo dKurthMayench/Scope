@@ -283,9 +283,6 @@ fieldset > legend{
     background: rgb(32, 34, 37);
     border-radius: 5px;
 }
-::-webkit-scrollbar-track:hover ::-webkit-scrollbar-thumb {
-    background: #72da77;
-}
 #btnCrearCat{
     margin-top: 3%;
 }

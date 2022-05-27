@@ -3,24 +3,51 @@ body{
   font-family: "Poppins", Arial, Sans-Serif;
   background-color: rgb(54,57,63);
 }
+img{
+  max-width: 100%;
+}
 .titulo{
   color: #fff;
 }
-
-.cuerpo{
-  color: #dfddde
+.intro, .help{
+  color: #dfddde;
 }
-
+.help{
+  padding-left: 2.5%;
+  display: inline;
+}
+.list{
+  padding-left: 0;
+  color: #dfddde;
+}
+.list li{
+  list-style: none;
+}
+.cuerpo{
+  color: #dfddde;
+}
+.error li{
+  color: rgb(247, 94, 94);
+}
 .sidenav {
   height: 100%;
-  width: 200px;
+  width: 375px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   background-color: rgb(47,49,54);
   overflow-x: hidden;
-  padding-top: 20px;
+}
+
+a{
+  color: rgb(88, 101, 242);
+}
+
+h2{
+  margin-top: 1%;
+  margin-bottom: 1%;
+  text-align: center;
 }
 
 .sidenav a, .dropdown-btn {
@@ -36,16 +63,19 @@ body{
   cursor: pointer;
   outline: none;
 }
-
+.sidenav a{
+  padding-left: 22px;
+}
 .sidenav a:hover, .dropdown-btn:hover {
   background-color: rgb(60,63,69);
-  color: #dcddde;
+  color: #dfddde;
 }
 
 .main {
-  margin-left: 200px;
+  margin-left: 375px;
   font-size: 20px;
-  padding: 0px 10px;
+  padding-left: 2.5%;
+  padding-right: 5%;
 }
 
 .active {
@@ -56,12 +86,12 @@ body{
 .dropdown-container {
   display: none;
   background-color: #262626;
-  padding-left: 8px;
 }
 
 .fa-caret-down, .fa-caret-up{
   float: right;
   padding-right: 8px;
+  padding-left: 8px;
 }
 
 @media screen and (max-height: 450px) {

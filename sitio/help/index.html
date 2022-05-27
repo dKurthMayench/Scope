@@ -13,42 +13,250 @@
 </head>
 <body>
     <div class="sidenav">
-        <button class="dropdown-btn">Inicio de Sesión
+        <h2 class="titulo">Índice</h2>
+
+        <button class="dropdown-btn">Inicio de sesión
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-          <a href="#">Usuario</a>
-          <a href="#">Contraseña</a>
-          <a href="#">Mensajes de Error</a>
+          <a href="#usuario">Usuario</a>
+          <a href="#pwd">Contraseña</a>
+          <a href="#loginError">Mensajes de error</a>
         </div>
-        <button class="dropdown-btn">Registro de una Cuenta
+
+        <button class="dropdown-btn">Registro de una cuenta
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-          <a href="#">Información</a>
-          <a href="#">Mensajes de Error</a>
+          <a href="#informacion">Información</a>
+          <a href="#validateEmail">Validar email</a>
+          <a href="#registerError">Mensajes de error</a>
         </div>
+
         <button class="dropdown-btn">Inicio
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+          <a href="#cabecera">Cabecera</a>
+          <a href="#navegacion">Navegación</a>
+          <a href="#homeList">Listado de publicaciones</a>
+          <a href="#crearPub">Crear publicación</a>
+          <a href="#crearCat">Crear categoría</a>
+          <a href="#homeError">Mensajes de error</a>
         </div>
-        <button class="dropdown-btn">Dropdown 
+
+        <button class="dropdown-btn">Crear publicación
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+          <a href="#pubCategoria">Categoría</a>
+          <a href="#pubTitulo">Título</a>
+          <a href="#pubList">Funciones del editor</a>
+          <a href="#pubError">Mensajes de error</a>
+        </div>
+
+        <button class="dropdown-btn">Sistema de búsqueda
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#searchCatList">Listado de categorías</a>
+          <a href="#searchPubList">Listado de publicaciones</a>
+          <a href="#searchError">Mensajes de error</a>
+        </div>
+
+        <button class="dropdown-btn">Publicaciones 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#publicaciones">Publicación</a>
+          <a href="#comentarios">Comentarios</a>
+          <a href="#deletePubCom">Eliminar Publicación/comentario</a>
+          <a href="#publicacionError">Mensajes de error</a>
+        </div>
+
+        <button class="dropdown-btn">Categorías
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#categoria">Categoría</a>
+          <a href="#catList">Listado de publicaciones</a>
+          <a href="#deleteCat">Eliminar categoría</a>
+        </div>
+
+        <button class="dropdown-btn">Categorías
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#categoria">Categoría</a>
+          <a href="#catList">Listado de publicaciones</a>
+          <a href="#deleteCat">Eliminar categoría</a>
+        </div>
+
+        <button class="dropdown-btn">Perfil de usuario (propio)
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#pfp">Foto de perfil</a>
+          <a href="#infoPropio">Información general</a>
+          <a href="#pwd">Cambiar contraseña</a>
+          <a href="#pfError">Mensajes de error</a>
+        </div>
+
+        <button class="dropdown-btn">Perfil de usuario (ajeno)
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#infoAjeno">Información general</a>
+          <a href="#follow">Seguir</a>
         </div>
       </div>
-      
+
       <div class="main">
         <h1 class="titulo">Manual de usuario de Scope</h1>
-        <p class="cuerpo">¿Estás atascado en alguna página? ¿No sabes qué significa "Contraseá incorrecta"? En ese caso, estás en el sitio indicado. Aquí encontrarás Información detallada sobre cómo funciona Scope. Simplemente haz clic en la sección de la barra lateral que quieras, o baja con la rueda del raón hasta que encuentres lo que buscas.</p>
+        <p class="intro">¿Estás atascado en alguna página? ¿No sabes qué significa "Contraseña incorrecta"? En ese caso, estás en el sitio indicado. Aquí encontrarás información detallada sobre cómo funciona Scope. Simplemente haz clic en la sección de la barra lateral que quieras, o baja con la rueda del raón hasta encuentrar lo que buscas.</p>
+        <hr>
+        
+        <h1 class="titulo">Inicio de sesión</h1>
+        <p class="cuerpo">
+          Esta es la página que se muestra por defecto al usuario. Aquí podrá iniciar sesión para empezar a utilizar la aplicación.
+        </p>
+        <h3 class="titulo" id="usuario">Usuario</h3>
+        <img src="../../resources/img/manual/login_usuario.png" alt="Input de usuario">
+        <p class="cuerpo">
+          Si tienes una cuenta de Scope, deberás introducir el nombre de usuario (alias) que elegiste al crearla, y darle al botón <img src="../../resources/img/manual/login_siguiente.png" alt="Siguiente"> para que se muestre el campo para introducir la contraseña.
+        </p>
+        <h3 class="titulo" id="pwd">Contraseña</h3>
+        <img src="../../resources/img/manual/login_pwd.png" alt="Input de usuario">
+        <p class="cuerpo">
+          En este campo deberás introducir la contraseña que elegiste al crear la cuenta. Luego dale a la tecla "enter" o haz clic en el botón <img src="../../resources/img/manual/login_iniciarSesion.png" alt="Iniciar Sesión"> para finalizar el inicio de sesión.
+        </p>
+        <p class="cuerpo">
+          Si has introducido un nombre de usuario erróneo en el campo anterior, puedes volver atrás con la tecla "esc" o haciendo clic en el botón <img src="../../resources/img/manual/login_atras.png" alt="Atrás">.
+        </p>
+        <h3 class="titulo" id="loginError">Mensajes de error</h3>
+        <ul class="error">
+          <li>Este campo es obligatorio:</li> <p class="help">Aparecerá cuando dejes en blanco un campo obligatorio (usuario o contraseña).</p>
+          <li>El usuario no existe. ¿Crear cuenta?:</li> <p class="help">Aparecerá cuando introduzcas un nombre de usuario que no esté registrado. Comprueba que lo hayas escrito correctamente, o <a href="../register/">crea una cuenta</a> si aún no lo has hecho.</p>
+          <li>La contraseña no es correcta:</li> <p class="help">Aparecerá cuando la contraseña introducida no coincida con la contraseña establecida en la creación de usuario. Comprueba que la hayas escrito correctamente, y asegurate de que estás intentando iniciar sesión con el nombre de usuario correcto.</p>
+        </ul>
+        <hr>
+        
+        <h1 class="titulo">Registro de una cuenta</h1>
+        <p class="cuerpo">
+          En esta página se podrá crear una cuenta, para luego poder iniciar sesión con ella.
+        </p>
+        <img src="../../resources/img/manual/register.png" alt="Página de registro">
+        <h3 class="titulo" id="informacion">Información</h3>
+        <ul class="list">
+          <li><img src="../../resources/img/manual/register_usuario.png" alt="Usuario"></li> <p class="help">En este campo deberás especificar el nombre de usuario que quieras.</p>
+          <hr>
+          <li><img src="../../resources/img/manual/register_email.png" alt="Email"></li> <p class="help">En este campo deberás introducir tu correo electrónico. Asegurate de escribirlo correctamente ya que deberás <a href="#validateEmail">verificarlo</a> más adelante.</p>
+          <hr>
+          <li><img src="../../resources/img/manual/register_pwd.png" alt="Contraseña"></li> <p class="help">En estos campos deberás introducir una contraseña segura (mínimo 8 caracteres, 1 mayúscula, 1 minúscula y 1 número), y escribirla otra vez para evitar errores.</p>
+          <hr>
+          <li><img src="../../resources/img/manual/register_pp.png" alt="Política de privacidad"></li> <p class="help">Para poder crear una cuenta deberás aceptar la política de privacidad.</p>
+          <hr>
+        </ul>
+        <p class="cuerpo">Para seguir con el registro haz clic en el botón <img src="../../resources/img/manual/register_createAcc.png" alt="Crear cuenta">.</p>
+        <h3 class="titulo" id="validateEmail">Validar email</h3>
+        <p class="cuerpo"></p>
+        <h3 class="titulo" id="registerError">Mensajes de error</h3>
+        <ul class="error">
+          <li>Este campo es obligatorio:</li> <p class="help">Aparecerá cuando dejes en blanco un campo obligatorio.</p>
+          <li>El usuario ya existe. ¿Iniciar Sesión?:</li> <p class="help">Aparecerá cuando introduzcas un nombre de usuario que ya está registrado. <a href="../login/">Inicia sesión</a> si ese usuario es tuyo, o escoge otro nombre de usuario.</p>
+          <li>Introduce máximo 16 caracteres:</li> <p class="help">Aparecerá cuando introduzcas un nombre de usuario con una longitud superior a 16 caracteres.</p>
+          <li>Sólo se pueden utilizar letras, números, "-", "_" o ".":</li> <p class="help">Aparecerá cuando introduzcas un nombre de usuario con símbolos especiales no permitidos.</p>
+          <li>Este correo ya está asociado a una cuenta:</li> <p class="help">Aparecerá cuando el correo introducido ya esté asociado a un usuario. Comprueba que lo hayas escrito correctamente, o prueba a iniciar sesión si estás seguro de haber creado una cuenta.</p>
+          <li>Introduce un correo electrónico válido:</li> <p class="help">Aparecerá cuando el correo introducido no tenga un formato de correo electrónico. Asegurate de que lo hayas escrito correctamente.</p>
+          <li>La contraseña debe tener al menos 8 caracteres, máximo 32, y al menos 1 minúscula, 1 mayúscula y 1 número:</li> <p class="help">Aparecerá cuando la contraseña introducida no cumpla con los requisitos especificados en el mensaje de error.</p>
+          <li>Las contraseñas no coinciden:</li> <p class="help">Aparecerá cuando la contraseña introducida en el primer campo no coincida con la introducida en el segundo.</p>
+          <li>Tienes que aceptar la política de privacidad para poder seguir con la creación decuenta:</li> <p class="help">Para crear una cuenta deberás marcar la casilla para aceptar la política de privacidad.</p>
+        </ul>
+        <hr>
+        
+        <h1 class="titulo">Inicio</h1>
+        <p class="cuerpo">Tras iniciar sesión, el usuario será redirigido a esta página.</p>
+        <img src="../../resources/img/manual/home.png" alt="Página de inicio">
+        <h3 class="titulo" id="cabecera">Cabecera</h3>
+        <p class="cuerpo">
+          La cabecera estará presente en todas las páginas salvo la de inicio de sesión, registro y política de privacidad.
+        </p>
+        <img src="../../resources/img/manual/header.png" alt="Cabecera">
+        <p class="cuerpo">
+          Constará de un botón para volver a la página de inicio, una barra de búsqueda, y una sección la cual llevará a la página de perfil en caso de hacer clic en ella.
+        </p>
+        <h3 class="titulo" id="navegacion">Navegación</h3>
+        <img src="../../resources/img/manual/home_nav.png" alt="Barra de navegación">
+        <p class="cuerpo">
+          Constará de un botón para volver a la página de inicio, una barra de búsqueda, y una sección la cual llevará a la página de perfil en caso de hacer clic en ella.
+        </p>
+        <h3 class="titulo" id="homeList">Listado de publicaciones</h3>
+        <img src="../../resources/img/manual/home_list.png" alt="Lista de publicaciones de la página de inicio">
+        <p class="cuerpo"></p>
+        <h3 class="titulo" id="crearCat">Crear categoría</h3>
+        <img src="../../resources/img/manual/home_createCat.png" alt="Crear categoría">
+        <p class="cuerpo"></p>
+        <h3 class="titulo" id="homeError">Mensajes de error</h3>
+        <p class="cuerpo"></p>
+        <hr>
+
+        <h1 class="titulo" id="crearPub">Crear publicación</h1>
+        <h3 class="titulo" id="pubCategoria">Categoría</h3>
+        <p class="cuerpo"></p>
+        <h3 class="titulo" id="pubTitulo">Título</h3>
+        <p class="cuerpo"></p>
+        <h3 class="titulo" id="pubList">Funciones del editor</h3>
+        <p class="cuerpo"></p>
+        <h3 class="titulo" id="pubError">Mensajes de error</h3>
+        <p class="cuerpo"></p>
+        <hr>
+        
+        <h1 class="titulo">Sistema de búsqueda</h1>
+        <h3 class="titulo" id="searchCatList">Listado de categorías</h3>
+        <p class="cuerpo"></p>
+        <h3 class="titulo" id="searchPubList">Listado de publicaciones</h3>
+        <p class="cuerpo"></p>
+        <h3 class="titulo" id="searchError">Mensajes de error</h3>
+        <p class="cuerpo"></p>
+        <hr>
+
+        <h1 class="titulo">Publicaciones</h1>
+        <h3 class="titulo" id="publicaciones">Publicación</h3>
+        <p class="cuerpo"></p>
+        <h3 class="titulo" id="comentarios">Comentarios</h3>
+        <p class="cuerpo"></p>
+        <h3 class="titulo" id="deletePubCom">Eliminar Publicación/comentario</h3>
+        <p class="cuerpo"></p>
+        <h3 class="titulo" id="publicacionError">Mensajes de error</h3>
+        <p class="cuerpo"></p>
+        <hr>
+
+        <h1 class="titulo">Categorías</h1>
+        <h3 class="titulo" id="categoria">Categoría</h3>
+        <p class="cuerpo"></p>
+        <h3 class="titulo" id="catList">Listado de publicaciones</h3>
+        <p class="cuerpo"></p>
+        <h3 class="titulo" id="deleteCat">Eliminar categoría</h3>
+        <p class="cuerpo"></p>
+        <hr>
+
+        <h1 class="titulo">Perfil de usuario (propio)</h1>
+        <h3 class="titulo" id="pfp">Foto de perfil</h3>
+        <p class="cuerpo"></p>
+        <h3 class="titulo" id="infoPropio">Información general</h3>
+        <p class="cuerpo"></p>
+        <h3 class="titulo" id="pwd">Cambiar contraseña</h3>
+        <p class="cuerpo"></p>
+        <h3 class="titulo" id="pfError">Mensajes de error</h3>
+        <p class="cuerpo"></p>
+        <hr>
+
+        <h1 class="titulo">Perfil de usuario (ajeno)</h1>
+        <h3 class="titulo" id="infoAjeno">Información general</h3>
+        <p class="cuerpo"></p>
+        <h3 class="titulo" id="follow">Seguir</h3>
+        <p class="cuerpo"></p>
+        <hr>
       </div>
 </body>
 </html>
