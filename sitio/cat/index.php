@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title><?php echo $categoria['nombre']; ?></title>
     <!--jquery-->
     <script type="text/javascript" src="HTTP://code.jquery.com/jquery-latest.js"></script>
     <script src="resources/index.js"></script>

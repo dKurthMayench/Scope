@@ -188,56 +188,129 @@
         <h3 class="titulo" id="navegacion">Navegación</h3>
         <img src="../../resources/img/manual/home_nav.png" alt="Barra de navegación">
         <p class="cuerpo">
-          Constará de un botón para volver a la página de inicio, una barra de búsqueda, y una sección la cual llevará a la página de perfil en caso de hacer clic en ella.
+          Tendrá 5 secciones.
+          <ul class="cuerpo">
+            <li><strong class="titulo">General:</strong> Mostrará publicaciones que puedan resultar interesantes al usuario, según las categorías que sigue.</li>
+            <li><strong class="titulo">Publicaciones guardadas:</strong> Mostrará las publicaciones que el usuario ha guardado.</li>
+            <li><strong class="titulo">Publicaciones votadas:</strong> Mostrará las publicaciones que el usuario ha votado positivamente.</li>
+            <li><strong class="titulo">Publicaciones propias:</strong> Mostrará las publicaciones que el usuario ha creado.</li>
+            <li><strong class="titulo">Siguiendo:</strong> Mostrará las publicaciones de los usuarios que sigues.</li>
+          </ul>
         </p>
         <h3 class="titulo" id="homeList">Listado de publicaciones</h3>
+        <p class="cuerpo">
+          En esta sección se mostrarán publicaciones dependiendo de la sección escogida en la barra de navegación.
+        </p>
+        <p class="cuerpo">
+          En cada elemento de la lista aparecerá el nombre de usuario del creador, la categoría a la cual pertenece, la fecha de publicación, el título, el número de comentarios y los votos de la publicación.
+        </p>
         <img src="../../resources/img/manual/home_list.png" alt="Lista de publicaciones de la página de inicio">
-        <p class="cuerpo"></p>
         <h3 class="titulo" id="crearCat">Crear categoría</h3>
+        <p class="cuerpo">
+          En esta sección se podrá crear una categoría, siempre y cuando no exista ya una con el mismo nombre.
+          Ni la descripción ni el nombre se podrán modificar una vez creada.
+        </p>
         <img src="../../resources/img/manual/home_createCat.png" alt="Crear categoría">
-        <p class="cuerpo"></p>
         <h3 class="titulo" id="homeError">Mensajes de error</h3>
-        <p class="cuerpo"></p>
+        <ul class="error">
+          <li>Este campo es obligatorio:</li> <p class="help">Aparecerá cuando dejes en blanco un campo obligatorio.</p>
+          <li>Esta categoría ya existe:</li> <p class="help">Aparecerá cuando introduzcas un nombre de categoría que ya está registrado.</p>
+          <li>No se admiten simbolos en el nombre de la categoría:</li> <p class="help">Aparecerá cuando introduzcas un nombre de categoría con símbolos especiales no permitidos.</p>
+          <li>Máximo 255 caracteres:</li> <p class="help">Aparecerá cuando introduzcas una descripción con una longitud superior a 255 caracteres.</p>
+        </ul>
         <hr>
 
         <h1 class="titulo" id="crearPub">Crear publicación</h1>
+        <p class="cuerpo">En esta página podrás crear una publicación.</p>
+        <img src="../../resources/img/manual/createPub.png" alt="Página de creaciónd e publicación">
+        <p class="cuerpo">Para crear una publicación deberás hacer clic en el botón de <img src="../../resources/img/manual/home_createPub.png" alt="Crear publicación"> en la página de inicio.</p>
         <h3 class="titulo" id="pubCategoria">Categoría</h3>
-        <p class="cuerpo"></p>
+        <p class="cuerpo">En el campo de categoría deberás escoger una categoría existente en la cual crear tu publicación. Se mostrará un listado de categorías existentes a medida que el usuario vaya escribiendo.</p>
+        <img src="../../resources/img/manual/createPub_list.png" alt="Página de creaciónd e publicación">
         <h3 class="titulo" id="pubTitulo">Título</h3>
-        <p class="cuerpo"></p>
+        <p class="cuerpo">El título se mostrará en las listas de publicaciones (página de inicio, o de categoría).</p>
         <h3 class="titulo" id="pubList">Funciones del editor</h3>
-        <p class="cuerpo"></p>
+        <p class="cuerpo">
+          Tendrá las siguientes funciones:
+          <ul class="cuerpo">
+            <li>Encabezado</li>
+            <li>Deshacer/rehacer</li>
+            <li>Subrayar, cursiva, negrita, tachar</li>
+            <li>Quitar formato</li>
+            <li>Subíndice/superíndice</li>
+            <li>Buscar y reemplazar</li>
+            <li>Lista de puntos y numerada</li>
+            <li>Bloque de código</li>
+            <li>Formato código</li>
+            <li>Línea horizontal</li>
+            <li>Sangrías</li>
+            <li>Alineación de texto</li>
+            <li>Citas</li>
+            <li>Contenido multimedia</li>
+            <li>Tablas</li>
+            <li>Enlaces</li>
+            <li>Color de fuente</li>
+            <li>Color de fondo</li>
+            <li>Tamaño de fuente</li>
+            <li>Tipografía</li>
+          </ul>
+        </p>
         <h3 class="titulo" id="pubError">Mensajes de error</h3>
-        <p class="cuerpo"></p>
+        <ul class="error">
+          <li>Este campo es obligatorio:</li> <p class="help">Aparecerá cuando dejes en blanco un campo obligatorio.</p>
+          <li>Esta categoría no existe, ¿Quieres crearla tú?:</li> <p class="help">Aparecerá cuando introduzcas un nombre de categoría que no está registrado.</p>
+          <li>Máximo 150 caracteres:</li> <p class="help">Aparecerá cuando introduzcas un título con una longitud superior a 150 caracteres.</p>
+        </ul>
         <hr>
         
         <h1 class="titulo">Sistema de búsqueda</h1>
+        <p class="cuerpo">En esta página aparecerán los elementos que coincidan con lo buscado por el usuario. Para realizar una búsqueda, el usuario debe introducir algo en la barra de búsqueda y hacer clic en el botón circular de la derecha.
+        </p>
+        <img src="../../resources/img/manual/search.png" alt="Página de búsqueda">
         <h3 class="titulo" id="searchCatList">Listado de categorías</h3>
-        <p class="cuerpo"></p>
+        <p class="cuerpo">Cada elemento de la lista mostrará el nombre, número de seguidores y descripción de la categoría.</p>
+        <img src="../../resources/img/manual/search_catList.png" alt="Página de búsqueda">
         <h3 class="titulo" id="searchPubList">Listado de publicaciones</h3>
-        <p class="cuerpo"></p>
+        <p class="cuerpo">
+          En cada elemento de la lista aparecerá el nombre de usuario del creador, la categoría a la cual pertenece, la fecha de publicación, el título, el número de comentarios y los votos de la publicación.
+        </p>
+        <img src="../../resources/img/manual/search_pubList.png" alt="Página de búsqueda">
         <h3 class="titulo" id="searchError">Mensajes de error</h3>
-        <p class="cuerpo"></p>
+        <p class="cuerpo">
+          <ul class="error">
+            <li>Este campo es obligatorio:</li> <p class="help">Aparecerá cuando dejes en blanco un campo obligatorio (barra de búsqueda).</p>
+          </ul>
+        </p>
         <hr>
 
         <h1 class="titulo">Publicaciones</h1>
+        <p class="cuerpo">En esta página se podrá ver el contenido de la publicación, los comentarios de los usuarios, t votar y guardar la publicacion. En caso de ser el autor de la publicación, habrá una opción para eliminarla.</p>
+        <img src="../../resources/img/manual/pub.png" alt="Publicación">
         <h3 class="titulo" id="publicaciones">Publicación</h3>
-        <p class="cuerpo"></p>
+        <p class="cuerpo">En la sección de contenido podrás hacer clic en el nombre del autor para ir a la página de su perfil, y en el nombre de la categoría para ir a la página de inicio de esa categoría.</p>
+        <p class="cuerpo highImg">También podras votar <img src="../../resources/img/manual/pub_votar.png" alt="votar publicación">, guardar <img src="../../resources/img/manual/pub_guardar.png" alt="guardar publicación">, o si eres el autor, eliminar <img src="../../resources/img/manual/pub_eliminar.png" alt="eliminar publciación"> la publicación.</p>
         <h3 class="titulo" id="comentarios">Comentarios</h3>
-        <p class="cuerpo"></p>
+        <p class="cuerpo">Debajo del contenido de la publicación, encontrarás la caja de comentairos. Los comentarios son mensajes que los usuarios pueden dejar en todas las publicaciones. Para añadir un comentario, escribe lo que quieras en el campo <img src="../../resources/img/manual/pub_comentar.png" alt="comentar"> y dale al botón <img src="../../resources/img/manual/pub_comentar_btn.png" alt="comentar">.</p>
+        <p class="cuerpo highImg">También puedes votar <img src="../../resources/img/manual/pub_votar.png" alt="votar"> cada comentario.</p>
         <h3 class="titulo" id="deletePubCom">Eliminar Publicación/comentario</h3>
-        <p class="cuerpo"></p>
+        <p class="cuerpo">Si eres el autor de un comentario, puedes editarlo, o eliminarlo. Para editar un comentario, dale al botón <img src="../../resources/img/manual/pub_comentar_editar.png" alt="editar">, modifica lo que quieras, y dale al botón <img src="../../resources/img/manual/pub_comentar_guardar.png" alt="guardar">. Si has hecho cambios y quieres rectificarlos, dale a <img src="../../resources/img/manual/pub_comentar_cancelar.png" alt="cancelar"> en vez de guardarlos. Para eliminar un comentario dale al botón <img src="../../resources/img/manual/pub_comentar_eiminar.png" alt="eliminar">.</p>
         <h3 class="titulo" id="publicacionError">Mensajes de error</h3>
-        <p class="cuerpo"></p>
+        <p class="cuerpo">
+          <ul class="error">
+            <li>Máximo 100 caracteres:</li> <p class="help">Aparecerá cuando intentes publicar un comentario que supere los 100 caracteres de longitud.</p>
+          </ul>
+        </p>
         <hr>
 
         <h1 class="titulo">Categorías</h1>
+        <p class="cuerpo">En esta página encontrarás un listado de publicaciones creadas en la categoría en la que te encuentras.</p>
+        <img src="../../resources/img/manual/cat.png" alt="Publicación">
         <h3 class="titulo" id="categoria">Categoría</h3>
-        <p class="cuerpo"></p>
+        <p class="cuerpo">En la parte superior de la página encontrarás el nombre de la categoría, un botón de <img src="../../resources/img/manual/cat_follow.png" alt="seguir">, y en caso de ser el propietario, un botón de <img src="../../resources/img/manual/cat_eliminar.png" alt="eliminar">.
+        </p>
         <h3 class="titulo" id="catList">Listado de publicaciones</h3>
         <p class="cuerpo"></p>
         <h3 class="titulo" id="deleteCat">Eliminar categoría</h3>
-        <p class="cuerpo"></p>
         <hr>
 
         <h1 class="titulo">Perfil de usuario (propio)</h1>

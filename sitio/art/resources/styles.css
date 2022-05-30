@@ -376,6 +376,10 @@ a:active {
     font-size: x-large;
     padding: 1%;
     width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .error{
     display: none;
@@ -387,6 +391,7 @@ a:active {
     width: 50%;
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 #divFieldset{
     width: 80%;
@@ -394,29 +399,29 @@ a:active {
 #buscar{
     color: white;
 }
-.editarComentario .guardar{
+.editarComentario, .guardar{
     cursor: pointer;
     border-radius: 10px;
     border: 1px solid white;
     background-color: #72da77;
 }
-.borrarComentario .descartar{
+.borrarComentario, .descartar{
     cursor: pointer;
     border-radius: 10px;
     border: 1px solid white;
     background-color: #da7272;
 }
-.editarComentario .guardar:hover{
+.editarComentario:hover, .guardar:hover{
     background-color: #41d848;
 }
-.borrarComentario .descartar:hover{
+.borrarComentario:hover, .descartar:hover{
     background-color: #d43d3d;
 }
 .izqd a, .izqd a:active, .izqd a:hover{
     color: white;
     text-decoration: none;
 }
-.guardar{
+.guardarPub{
     border-radius: 10px;
     border: 1px solid white;
     background-color: #23272A;
@@ -424,7 +429,7 @@ a:active {
     padding: 10%;
     width: auto;
 }
-.guardar:hover{
+.guardarPub:hover{
     border-radius: 10px;
     border: 1px solid white;
     background-color: #72da77;

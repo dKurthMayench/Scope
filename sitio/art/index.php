@@ -100,7 +100,7 @@
                 <?php 
                     if(!isset($con)) $con = new mysqli("localhost", "root", "", "Scope");
                     $res = $con->query("SELECT * FROM publicacionesguardadas WHERE alias='".$_SESSION['user']['alias']."' AND art='".$articulo['id']."'");
-                    if ($res->num_rows == 0) echo "guardar\">Guardar</button>";
+                    if ($res->num_rows == 0) echo "guardarPub\">Guardar</button>";
                     else echo "guardada\">Guardado</button>";
                 ?>
                 <div class="like likeA">▲</div>
@@ -210,7 +210,7 @@
         document.querySelectorAll( 'oembed[url]' ).forEach( element => {
             iframely.load( element, element.attributes.url.value );
             iframely.on('error', function (element, url){
-                alert("error");
+                alert("error con iframely");
             });
         } );
         document.querySelectorAll( 'div[data-oembed-url]' ).forEach( element => {

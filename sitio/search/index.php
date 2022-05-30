@@ -48,7 +48,7 @@
             </div>
         </div>
     </div>
-    <h1>Resultados de la búsqueda...</h1>
+    <h1 class="head">Resultados de búsqueda...</h1>
     <hr/>
     <div class="resultado">
         <div class="categorias">

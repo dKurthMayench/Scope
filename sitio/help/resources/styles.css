@@ -40,6 +40,13 @@ img{
   overflow-x: hidden;
 }
 
+.highImg{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+}
 a{
   color: rgb(88, 101, 242);
 }

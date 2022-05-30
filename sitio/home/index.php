@@ -104,7 +104,7 @@
                         Esta categoría ya existe.
                     </div>
                     <div class="error" id="errorNombreVacio">
-                        Este campo no puede estar vacío.
+                        Este campo es obligatorio.
                     </div>
                     <div class="error" id="errorNombreIlegal">
                         No se admiten simbolos en el nombre de la categoría.
@@ -116,7 +116,7 @@
                         <textarea class="input descCategoria" id="descCategoria" name="descCategoria" rows="4" placeholder="Descripción de la categoría (opcional)"></textarea>
                     </fieldset>
                     <div class="error" id="descripcionLarga">
-                        Máximo 255 caracteres
+                        Máximo 255 caracteres.
                     </div>
                 </div>
                 <button type="button" id="btnCrearCat" class="btn">Crear categoría</button>
