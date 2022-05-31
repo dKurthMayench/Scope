@@ -139,7 +139,7 @@
                         Este campo es obligatorio.
                     </div>
                     <div class="error" id="errorOldPwdIncorrecto">
-                        La contraseña no es correcta
+                        La contraseña no es correcta.
                     </div>
                 </div>
 
@@ -152,7 +152,7 @@
                         Este campo es obligatorio.
                     </div>
                     <div class="error" id="errorPwdSeguro">
-                        La contraseña debe tener al menos 8 caracteres, máximo 32, y al menos 1 minúscula, 1 mayúscula y 1 número
+                        La contraseña debe tener al menos 8 caracteres, máximo 32, y al menos 1 minúscula, 1 mayúscula y 1 número.
                     </div>
                 </div>
                 <div class="item itemPwdConfirm">
