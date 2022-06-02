@@ -16,6 +16,11 @@ $(document).ready(function() {
         }
     });
     
+    //cerrar sesion
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET","../../conexion/cerrarSesion.php", true);
+    xhttp.send();
+
 });
 
 function validarUsuario(){

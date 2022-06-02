@@ -23,10 +23,8 @@ $(document).ready(function() {
 });
 
 function getElementos(tipo){
-    $(".list").empty();
-    if(tipo == "categorias") $(".list").html("<h3>Categorías</h3><hr/>");
-    else if(tipo == "articulos") $(".list").html("<h3>Publicaciones</h3><hr/>");
-    else if(tipo == "comentarios") $(".list").html("<h3>Comentarios</h3><hr/>");
+
+    if(tipo == "comentarios") $(".list").html("<h3>Comentarios</h3><hr/>");
     else if(tipo == "usuarios") $(".list").html("<h3>Usuarios</h3><hr/>");
     $.ajax({
         type: 'POST',
@@ -57,16 +55,24 @@ function validarBusqueda(){
 }
 
 function generarPagina(elementos, tipo){
-    if (tipo == "caetgorias"){
+    if (tipo == "categorias"){
+        $(".list").empty();
+        $(".list").html("<h3>Categorías</h3><hr/>");
         for(let i = 0; i < elementos.length; i++) crearCat(elementos[i]);
     }
     else if (tipo == "articulos"){
+        $(".list").empty();
+        $(".list").html("<h3>Publicaciones</h3><hr/>");
         for(let i = 0; i < elementos.length; i++) crearPub(elementos[i]);
     }
     else if (tipo == "comentarios"){
+        $(".list").empty();
+        $(".list").html("<h3>Comentarios</h3><hr/>");
         for(let i = 0; i < elementos.length; i++) crearComentario(elementos[i]);
     }
     else if (tipo == "usuarios"){
+        $(".list").empty();
+        $(".list").html("<h3>Usuarios</h3><hr/>");
         for(let i = 0; i < elementos.length; i++) crearUsuario(elementos[i]);
     }
 }
@@ -125,7 +131,81 @@ function crearPub(publicacion){
     $(".list").append(articulo);
 }
 
+//mediante DOM creo la lista de categorias
+function crearCat(categoria){
+    var divcategoria = document.createElement("a");
+    divcategoria.setAttribute("class", "categoria");
+    divcategoria.setAttribute("id", categoria.id);
 
+    var divAux1 = document.createElement("div");
+    divAux1.setAttribute("class", "nombre");
+    
+    divAux1.appendChild(document.createTextNode(categoria.nombre));
+
+    var divAux2 = document.createElement("div");
+    divAux2.setAttribute("class", "nSeguidores");
+
+    divAux2.appendChild(document.createTextNode("Miembros: "+categoria.seguidores));
+    
+    var divAux3 = document.createElement("div");
+    divAux3.setAttribute("class", "descripcion");
+    
+    if(categoria.descripcion == "") divAux3.appendChild(document.createTextNode("(Sin descripción)"));
+    else divAux3.appendChild(document.createTextNode(b64DecodeUnicode(categoria.descripcion)));
+    
+    divcategoria.setAttribute("href", "../cat/index.php?id="+categoria.id);
+
+    divcategoria.appendChild(divAux1);
+    divcategoria.appendChild(divAux2);
+    divcategoria.appendChild(divAux3);
+
+    $(".list").append(divcategoria);
+}
+
+function crearComentario(comentario){
+    var divcomentario = document.createElement("a");
+    divcomentario.setAttribute("class", "comentario");
+    divcomentario.setAttribute("id", comentario.id);
+
+    var divAux1 = document.createElement("div");
+
+    var pfp = document.createElement("img");
+    pfp.setAttribute("src", comentario.foto);
+    pfp.setAttribute("class", "imagen");
+    divAux1.appendChild(pfp);
+    
+    var divAux2 = document.createElement("div");
+    divAux2.setAttribute("class", "cuerpo");
+    
+    var divAux3 = document.createElement("div");
+    divAux3.setAttribute("class", "comentador");
+    divAux3.appendChild(document.createTextNode(comentario.comentador));
+
+    var divAux4 = document.createElement("div");
+    divAux4.setAttribute("class", "contenido");
+    divAux4.appendChild(document.createTextNode(b64DecodeUnicode(comentario.contenido)));
+    
+    divAux2.appendChild(divAux3);
+    divAux2.appendChild(divAux4);
+    divAux1.appendChild(divAux2);
+
+    var divAux5 = document.createElement("div");
+    divAux5.setAttribute("class", "votos");
+
+    divcomentario.setAttribute("href", "../art/index.php?id="+comentario.articulo);
+
+    divcomentario.appendChild(divAux1);
+
+    $(".list").append(divcomentario);
+}
+
+//decodificar tildes en base64
+function b64DecodeUnicode(str) {
+    // Going backwards: from bytestream, to percent-encoding, to original string.
+    return decodeURIComponent(atob(str).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+}
 function vacio(){
     $(".list").append("Que oscuro y vacío está esto...");
 }

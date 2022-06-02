@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="resources/styles.css">
     <script src="resources/index.js"></script>
     <script src="resources/styles.js"></script>
-    <title>Document</title>
+    <title>Activación de cuenta</title>
 </head>
 <body>
 
