@@ -20,6 +20,7 @@
     <?php 
         require_once("../../conexion/utils.php");
         session_start();
+        //si el usuario no ha activado su cuenta, será redirigido a la página de verificación de código
         if (isset($_SESSION['user'])){
             if ($_SESSION['user']['activo'] != 1) redirect("../register/finalizarRegistro.php");
         }
@@ -55,6 +56,7 @@
             <div class="alias">
                 <?php echo $_SESSION['user']['alias']; ?>
                 <div class="rep"><?php
+                    //calculo la reputación del usuario
                     if(!isset($con)) $con = new mysqli("localhost", "root", "", "Scope");
                     $res = $con->query("SELECT (SELECT COUNT(*) FROM votosxarticulos WHERE art IN (SELECT id FROM articulos WHERE op='".$_SESSION['user']['alias']."') AND positivo=1) - (SELECT COUNT(*) FROM votosxarticulos WHERE art IN (SELECT id FROM articulos WHERE op='".$_SESSION['user']['alias']."') AND positivo=0) as rep");
                     $rep = mysqli_fetch_assoc($res);

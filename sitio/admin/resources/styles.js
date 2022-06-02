@@ -1,37 +1,13 @@
 $(document).ready(function() {
     //estilos de la barra de navegación
-    $(".general").addClass("selected");
-    $(".general").click(function (){
+    $(".categorias").addClass("selected");
+    $(".categorias, .articulos, .comentarios, .usuarios").click(function (){
         $("#nav div").removeClass("selected");
         $(this).addClass("selected");
-        $(".articulos").empty();
-        getPublicacionesGeneral();
     });
-    $(".guardados").click(function (){
-        $("#nav div").removeClass("selected");
-        $(this).addClass("selected");
-        $(".articulos").empty();
-        getPublicacionesGuardadas();
+    $(".volver").click(function (){
+        location.href="../home";
     });
-    $(".votados").click(function (){
-        $("#nav div").removeClass("selected");
-        $(this).addClass("selected");
-        $(".articulos").empty();
-        getPublicacionesVotadas();
-    });
-    $(".publicados").click(function (){
-        $("#nav div").removeClass("selected");
-        $(this).addClass("selected");
-        $(".articulos").empty();
-        getPublicacionesPropias();
-    });
-    $(".siguiendo").click(function (){
-        $("#nav div").removeClass("selected");
-        $(this).addClass("selected");
-        $(".articulos").empty();
-        getPublicacionesSiguiendo();
-    });
-
     //ajax para recuperar la foto de perfil
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
