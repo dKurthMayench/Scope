@@ -29,25 +29,26 @@
             send_mail($_SESSION['email'], $_SESSION['codigo']);
             //meto en la variable de sesion el momento actual + 5 minutos (el código expirará en 5 minutos)
             $_SESSION['timeout'] = time()+(60*5);
-            //este echo es porque el mail() ha dejado de funcionar para aplicaciones "no seguras". Así puedo ver el código sin ir al correo y verificar si funciona todo.
-            echo $_SESSION['codigo'];
-            //\\
         }        
+        //este echo es porque el mail() ha dejado de funcionar para aplicaciones "no seguras". Así puedo ver el código sin ir al correo y verificar si funciona todo.
         echo $_SESSION['codigo'];        
+        //\\
         echo "<input type='hidden' name='email' id='email' value='".$_SESSION['email']."'>";
-        echo '<div class="item divUsuario">
+        echo '<div class="item divCodigo">
             <div class="header">
                 Se ha enviado el codigo de verifiación a '.$_SESSION['email'].'
             </div>
-            <fieldset id="fieldsetUser" class="instruccion">
-                <legend>Introduce el código</legend>
-                <input type="text" class="input usuario" id="codigo" name="codigo" placeholder="Código de verificación">
-            </fieldset>
-            <div class="error" id="errorCodigoVacio">
-                Este campo es obligatorio
-            </div>
-            <div class="error" id="errorCodigoInvalido">
-                El código no es correcto o ha expirado. 
+            <div class="b2">
+                <fieldset id="fieldsetUser" class="instruccion">
+                    <legend>Introduce el código</legend>
+                    <input type="text" class="input usuario" id="codigo" name="codigo" placeholder="Código de verificación">
+                </fieldset>
+                <div class="error" id="errorCodigoVacio">
+                    Este campo es obligatorio
+                </div>
+                <div class="error" id="errorCodigoInvalido">
+                    El código no es correcto o ha expirado. 
+                </div>
             </div>
             <button type="button" class="btn validarUsuario" onclick="validarCodigo()">Comprobar</button>
         </div>';

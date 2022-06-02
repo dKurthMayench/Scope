@@ -110,3 +110,27 @@ fieldset{
 .itemCheckbox{
     text-align: left;
 }
+.divCodigo{
+    height: 60%;
+    margin-top: 18vh;
+    overflow: hidden; 
+    background-color: #2C2F33;
+    color: #99AAB5;
+    font-size: large;
+    font-family: "Poppins", Arial, Sans-Serif;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 400px;
+    justify-content: space-around;
+    align-items:stretch;
+    padding: 5%;
+}
+.header{
+    text-align: center;
+}

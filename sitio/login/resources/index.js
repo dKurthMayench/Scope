@@ -1,8 +1,4 @@
-$(document).ready(function() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("GET","../../conexion/closeSesion.php", true);
-    xhttp.send();
-    
+$(document).ready(function() {    
     //control del formulario con el teclado pq se hace muy pesado tener que estar dandole con el raton para hacer pruebas.
     /**
      * con enter vas desde el input usuario al input password.
