@@ -149,6 +149,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(100) DEFAULT NULL,
   `apellidos` varchar(100) DEFAULT NULL,
   `activo` tinyint(1) DEFAULT 0,
+  `fecha_creacion` date DEFAULT cast(current_timestamp() as datetime),
   PRIMARY KEY (`alias`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -159,7 +160,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES ('','$2y$10$mxmD8sKoQZrTlVON49FttuOti136nhrHgZETOXaqn33WS1IBeS1b6','',NULL,NULL,NULL,0),('admin','$2y$10$v6Za8BQ8NUinWhaaKo4jFeKQyN7iDiPv8hu1Bqn6dfHPAR6K3Jk2a','admin@gmail.com','Cuenta de administradordsfsdfsd','admin','admin',1),('david','$2y$10$k7dJrFv3x/UlPtVT1ZKjl.Cgm2Ywfi67OYGq.G54L9dKck48RlUhu','davidkurth11@gmail.com',NULL,NULL,NULL,1),('lucas','$2y$10$0qEjpqVvy7wMRWPwBb5Ime1fWo2e0i7Oqt2/Ee4B2JbAj13LxjDwW','lucas@gmail.com','hola :b',NULL,NULL,1);
+INSERT INTO `usuarios` VALUES ('','$2y$10$mxmD8sKoQZrTlVON49FttuOti136nhrHgZETOXaqn33WS1IBeS1b6','',NULL,NULL,NULL,0,'2022-06-02'),('admin','$2y$10$v6Za8BQ8NUinWhaaKo4jFeKQyN7iDiPv8hu1Bqn6dfHPAR6K3Jk2a','admin@gmail.com','Cuenta de administradordsfsdfsd','admin','admin',1,'2022-06-02'),('admin2','$2y$10$vgBNZQ8EXC0Sh.ef1a5s7.J22nMPsue1qadbWZvQj9ywxLw79MXsS','davidkurth10@gmail.com',NULL,NULL,NULL,0,'2022-06-02'),('david','$2y$10$k7dJrFv3x/UlPtVT1ZKjl.Cgm2Ywfi67OYGq.G54L9dKck48RlUhu','davidkurth11@gmail.com',NULL,NULL,NULL,1,'2022-06-02'),('lucas','$2y$10$0qEjpqVvy7wMRWPwBb5Ime1fWo2e0i7Oqt2/Ee4B2JbAj13LxjDwW','lucas@gmail.com','hola :b',NULL,NULL,1,'2022-06-02');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -255,4 +256,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-30  7:54:22
+-- Dump completed on 2022-06-06  7:49:57

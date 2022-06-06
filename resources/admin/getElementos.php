@@ -46,14 +46,17 @@
                 else $elem[$i]['foto'] = "../../resources/img/pfp/(default).jpg";
             }
         }
-        else if($_POST['type'] == "comentarios"){
+        else if($_POST['type'] == "usuarios"){
             for($i = 0; $i < count($elem); $i++){
-                $consultaVotos = $con->query("SELECT (SELECT COUNT(*) FROM votosxcomentarios WHERE positivo=1 AND comentario=".$elem[$i]['id'].") - (SELECT COUNT(*) FROM votosxcomentarios WHERE positivo=0 AND comentario=".$elem[$i]['id'].") AS votos;");
-                $votosComentario = mysqli_fetch_assoc($consultaVotos);
-                if(file_exists("../../resources/img/pfp/".$elem[$i]['comentador'].".jpg")) $elem[$i]['foto'] = "../../resources/img/pfp/".$elem[$i]['comentador'].".jpg";
-                else if(file_exists("../../resources/img/pfp/".$elem[$i]['comentador'].".jpeg")) $elem[$i]['foto'] = "../../resources/img/pfp/".$elem[$i]['comentador'].".jpeg";
-                else if(file_exists("../../resources/img/pfp/".$elem[$i]['comentador'].".png")) $elem[$i]['foto'] = "../../resources/img/pfp/".$elem[$i]['comentador'].".png";
-                else if(file_exists("../../resources/img/pfp/".$elem[$i]['comentador'].".gif"))  $elem[$i]['foto'] = "../../resources/img/pfp/".$elem[$i]['comentador'].".gif";
+                
+                $res = $con->query("SELECT (SELECT COUNT(*) FROM votosxarticulos WHERE art IN (SELECT id FROM articulos WHERE op='".$_SESSION['user']['alias']."') AND positivo=1) - (SELECT COUNT(*) FROM votosxarticulos WHERE art IN (SELECT id FROM articulos WHERE op='".$_SESSION['user']['alias']."') AND positivo=0) as rep");
+                if ($res->num_rows != 0) $elem[$i]['rep'] = mysqli_fetch_assoc($res);
+                else $elem[$i]['rep'] = 0;
+
+                if(file_exists("../../resources/img/pfp/".$elem[$i]['alias'].".jpg")) $elem[$i]['foto'] = "../../resources/img/pfp/".$elem[$i]['alias'].".jpg";
+                else if(file_exists("../../resources/img/pfp/".$elem[$i]['alias'].".jpeg")) $elem[$i]['foto'] = "../../resources/img/pfp/".$elem[$i]['alias'].".jpeg";
+                else if(file_exists("../../resources/img/pfp/".$elem[$i]['alias'].".png")) $elem[$i]['foto'] = "../../resources/img/pfp/".$elem[$i]['alias'].".png";
+                else if(file_exists("../../resources/img/pfp/".$elem[$i]['alias'].".gif"))  $elem[$i]['foto'] = "../../resources/img/pfp/".$elem[$i]['alias'].".gif";
                 else $elem[$i]['foto'] = "../../resources/img/pfp/(default).jpg";
             }
         }
