@@ -193,7 +193,33 @@ fieldset > legend{
     flex-direction: column;
     width: 100%;
 }
-.articulo:hover{
+
+.comentario{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: .5em;
+    padding: 1%;
+    margin-bottom: 1%;
+    background-color: #2C2F33;
+}
+
+.usuario{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-content: center;
+    border: 1px solid white;
+    border-radius: .5em;
+    padding: 1%;
+    margin-bottom: 1%;
+    background-color: #2C2F33;
+}
+.articulo:hover, .categoria:hover, .comentario:hover, .usuario:hover{
     background-color: #23272A;
 }
 .crearArt{
@@ -220,7 +246,7 @@ fieldset > legend{
     flex-direction: column;
     flex-wrap: nowrap;
 }
-.votos div:first-child, .nCom div:first-child{
+.votos div:first-child, .nCom div:first-child, .listNombre{
     color: #99AAB5;
     font-size: xx-small;
 }
@@ -316,18 +342,6 @@ fieldset > legend{
     border-radius: 50%;
     float: left;
     margin-right: .5%;
-}
-.comentario{
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid rgb(88, 101, 242);
-    border-radius: .5em;
-    padding: 1%;
-    margin-bottom: 1%;
-    background-color: #23272A;
 }
 .categoria .nombre{
     font-weight: bold;

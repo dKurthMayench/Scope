@@ -48,10 +48,9 @@
         }
         else if($_POST['type'] == "usuarios"){
             for($i = 0; $i < count($elem); $i++){
-                
-                $res = $con->query("SELECT (SELECT COUNT(*) FROM votosxarticulos WHERE art IN (SELECT id FROM articulos WHERE op='".$_SESSION['user']['alias']."') AND positivo=1) - (SELECT COUNT(*) FROM votosxarticulos WHERE art IN (SELECT id FROM articulos WHERE op='".$_SESSION['user']['alias']."') AND positivo=0) as rep");
-                if ($res->num_rows != 0) $elem[$i]['rep'] = mysqli_fetch_assoc($res);
-                else $elem[$i]['rep'] = 0;
+                $res = $con->query("SELECT (SELECT COUNT(*) FROM votosxarticulos WHERE art IN (SELECT id FROM articulos WHERE op='".$elem[$i]['alias']."') AND positivo=1) - (SELECT COUNT(*) FROM votosxarticulos WHERE art IN (SELECT id FROM articulos WHERE op='".$elem[$i]['alias']."') AND positivo=0) as rep");
+                $rep = mysqli_fetch_assoc($res);
+                $elem[$i]['rep'] = $rep['rep'];
 
                 if(file_exists("../../resources/img/pfp/".$elem[$i]['alias'].".jpg")) $elem[$i]['foto'] = "../../resources/img/pfp/".$elem[$i]['alias'].".jpg";
                 else if(file_exists("../../resources/img/pfp/".$elem[$i]['alias'].".jpeg")) $elem[$i]['foto'] = "../../resources/img/pfp/".$elem[$i]['alias'].".jpeg";

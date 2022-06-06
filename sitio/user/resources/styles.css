@@ -235,3 +235,16 @@ textarea{
 #buscar{
     color: white;
 }
+
+#delete{
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: #da7272;
+    color: black;
+    padding: 2.5%;
+    width: auto;
+}
+
+#delete:hover{ 
+    background-color: #d43d3d;
+}

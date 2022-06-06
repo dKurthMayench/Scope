@@ -69,7 +69,7 @@
                 <div id="rep">
                     <div class="subtitulo">Reputación</div>
                     <div class="contenido"><?php 
-                        $res = $con->query("SELECT (SELECT COUNT(*) FROM votosxarticulos WHERE art IN (SELECT id FROM articulos WHERE op='".$usuario['alias']."') AND positivo=1) - (SELECT COUNT(*) FROM votosxarticulos WHERE art IN (SELECT id FROM articulos WHERE op='".$_SESSION['user']['alias']."') AND positivo=0) as rep");
+                        $res = $con->query("SELECT (SELECT COUNT(*) FROM votosxarticulos WHERE art IN (SELECT id FROM articulos WHERE op='".$usuario['alias']."') AND positivo=1) - (SELECT COUNT(*) FROM votosxarticulos WHERE art IN (SELECT id FROM articulos WHERE op='".$usuario['alias']."') AND positivo=0) as rep");
                         $rep = mysqli_fetch_assoc($res);
                         echo $rep['rep']; ?></div>
                 </div>
@@ -107,6 +107,9 @@
                 </button>
                 <!-- cierro la etiqueta en el php por eso lo muestra como un error pero esta bien en el html final -->
             </div>
+            <?php
+                if ($_SESSION['user']['alias'] == "admin") echo '<button id="delete">Eliminar cuenta</button>';
+            ?>
         </div>
     </div>
 </body>

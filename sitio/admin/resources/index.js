@@ -162,6 +162,7 @@ function crearCat(categoria){
     $(".list").append(divcategoria);
 }
 
+//mediante DOM creo la lista de categorias
 function crearComentario(comentario){
     var divcomentario = document.createElement("a");
     divcomentario.setAttribute("class", "comentario");
@@ -199,9 +200,58 @@ function crearComentario(comentario){
     $(".list").append(divcomentario);
 }
 
+//mediante DOM creo la lista de categorias
+function crearUsuario(usuario){
+
+    var divusuario = document.createElement("a");
+    divusuario.setAttribute("href", "../user/index.php?alias="+usuario.alias);
+    divusuario.setAttribute("id", usuario.alias);
+    divusuario.setAttribute("class", "usuario");
+
+    var divAux1 = document.createElement("div");
+    divAux1.classList.add("listAlias");
+    divAux1.appendChild(document.createTextNode(usuario.alias));
+
+    var divAux2 = document.createElement("div");
+    divAux2.classList.add("listNombre");
+
+
+    if(usuario.nombre == "" || usuario.nombre == null){
+        if(usuario.apellidos != "" && usuario.apellidos != null){
+            divAux2.appendChild(document.createTextNode("Sr/Sra "+usuario.apellidos));
+        }
+        else{
+            divAux2.appendChild(document.createTextNode(""));
+        }
+    }
+    else{
+        if(usuario.apellidos != "" || usuario.apellidos != null){
+            divAux2.appendChild(document.createTextNode(usuario.nombre+" "+usuario.apellidos));
+        }
+        else{
+            divAux2.appendChild(document.createTextNode(usuario.nombre));
+        }
+    }
+
+    var divAux3 = document.createElement("div");
+    divAux3.classList.add("listRep");
+    divAux3.appendChild(document.createTextNode("Reputación: "+usuario.rep));
+
+    var divAux4 = document.createElement("div");
+    divAux4.classList.add("listDate");
+    divAux4.appendChild(document.createTextNode("Fecha de creación: "+usuario.fecha_creacion));
+
+    divusuario.appendChild(divAux1);
+    divusuario.appendChild(divAux2);
+    divusuario.appendChild(divAux3);
+    divusuario.appendChild(divAux4);
+    $(".list").append(divusuario);
+}
+
+
 //decodificar tildes en base64
 function b64DecodeUnicode(str) {
-    // Going backwards: from bytestream, to percent-encoding, to original string.
+    // bytestream -> percent-encoding -> string original
     return decodeURIComponent(atob(str).split('').map(function(c) {
         return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
     }).join(''));
