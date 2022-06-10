@@ -60,7 +60,7 @@
         </div>
     </div>
     <h1 id="titulo">Crear publicación</h1>
-    <form id='form' action="../inicio/" method="post">
+    <form id='form' action="../home/" method="post">
         <div class="selectCategoria">
             <div id="iCategoria" class="item itemCategoria">
                 <fieldset id="fieldsetCategoria" class="instruccion">
