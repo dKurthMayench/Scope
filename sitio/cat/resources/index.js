@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $("#header .perfil").click(function (){
-        location.href = "../perfil/";
+        location.href = "../profile/";
     });
 
     //seguirr/dejar de seguir categoria
@@ -31,7 +31,7 @@ $(document).ready(function() {
                     idCat: $("#idCat").val(),
                 },
                 success: function (){
-                    location.href="../inicio";
+                    location.href="../home";
                 },
                 error: function (data) {
                     console.log("error al procesar los datos");
