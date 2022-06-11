@@ -22,16 +22,23 @@
 
         //aunque el usuario recargue la página, mysql no insertará otro registro ya que la clave primaria estaría duplicandose así que no hace falta que compruebe si ya existe o no
         $con->query("INSERT INTO usuarios (alias, password, email) VALUES ('".$_SESSION['alias']."','".$_SESSION['pwd']."','".$_SESSION['email']."')");
-        
+        if(isset($_SESSION['timeout'])){
+            if($_SESSION['timeout'] < time()) unset($_SESSION['codigo']);
+        }
         if(!isset($_SESSION['codigo'])){
             //meto el codigo en una variable de sesion y envio el mail con el codigo
             $_SESSION['codigo'] = random_int(100000, 999999);
-            send_mail($_SESSION['email'], $_SESSION['codigo']);
+
+            $subject = "Activa tu cuenta de Scope";
+            $body = "Código de verificación: ".$_SESSION['codigo'].". Si no has solicitado este correo, puedes ignorarlo.";
+            $headers = "From: Scope";
+            mail($_SESSION['email'], $subject, $body, $headers);
+
             //meto en la variable de sesion el momento actual + 5 minutos (el código expirará en 5 minutos)
             $_SESSION['timeout'] = time()+(60*5);
-        }        
+        }
         //este echo es porque el mail() ha dejado de funcionar para aplicaciones "no seguras". Así puedo ver el código sin ir al correo y verificar si funciona todo.
-        echo $_SESSION['codigo'];        
+        echo $_SESSION['codigo'];
         //\\
         echo "<input type='hidden' name='email' id='email' value='".$_SESSION['email']."'>";
         echo '<div class="item divCodigo">

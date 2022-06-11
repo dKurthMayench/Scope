@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $("#header .perfil").click(function (){
-        location.href = "../profile/";
+        location.href = "../perfil/";
     });
     $("#guardar").click(function () {
         guardar();

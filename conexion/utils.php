@@ -21,12 +21,4 @@
         $con->query("UPDATE usuarios SET activo=1 WHERE email='".$email."'");
         session_destroy();
     }
-
-    //envia un email (revisar el 30 de mayo)
-    function send_mail($to_email, $codigo){
-        $subject = "Activa tu cuenta de Scope";
-        $body = "Código de verificación: $codigo. Si no has solicitado este correo, puedes ignorarlo.";
-        $headers = "From: Scope";
-        mail($to_email, $subject, $body, $headers);
-    }
 ?>
